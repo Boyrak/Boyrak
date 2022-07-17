@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>iOS Certificate online detection</title>
+    <link rel="stylesheet" href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="libs/animate.css" />
+    <link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <input type="file" name="uploadfile" class="hide" onchange="handleFileUpload(this.files, $(this))" data-target="" id="uploadfile" />
+    <div class="content container mt-80 inner-content">
+      <h3 class="text-center font-36 font-cert-check-title">iOS Certificate online detection</h3>
+      <h3 class="text-center font-16 mt-20 color-8c9497">Want to check certificate expiration time? User feedback cannot be downloaded and installed? Check if the iOS certificate is normal for you online</h3>
+      <div class="text-center cert mt-30 col-md-8 col-md-offset-2">
+        <div class="form-horizontal text-center" id="checkStatus">
+          <div id="certCheckTabContent" class="tab-content">
+            <div class="tab-pane fade active in " id="certFile">
+              <h5 class="url-title mb-30">Please upload iOS p12 certificate and mobilprovision file</h5>
+              <div class="container-fluid file-upload-container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="upload-img-init " id="uploadCert">
+                      <img id="" src="images/p12_file_2x.png" class="img-responsive center-block file-icon" />
+                      <div class="text-center upload-tips">
+                        <p>Click to select files or drag and drop files to this area</p>
+                        <p>(support p12 format certificate)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="upload-img-init " id="uploadProvision">
+                      <img id="" src="images/optional_icon_2x.png" class="img-responsive center-block file-icon optional-icon" />
+                      <img id="" src="images/mp_icon_2x.png" class="img-responsive center-block file-icon" />
+                      <div class="text-center upload-tips">
+                        <p>Click to select files or drag and drop files to this area</p>
+                        <p>(support mobileprovision format file)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8 col-md-offset-2">
+                    <div class="form-group">
+                      <span for="name" class="font-16">p12 Certificate password:</span>
+                      <input name="password" type="password" id="password" class="form-control" placeholder="If the password is blank, leave it blank" />
+                    </div>
+                  </div>
+                </div>
+                <hr class="mt-15 mb-20" />
+              </div>
+            </div>
+            <div class="hide text-center" id="certResult">
+              <h5 class="url-title mb-30">Test results</h5>
+              <p class="hide" id="errorMsg">
+                <span style="color: #FD5A5A; font-size: 18px;"></span>
+                <a
+                  href="javascript:void(0);"
+                  class="popovers hide"
+                  data-html="true"
+                  data-container="body"
+                  data-toggle="popover"
+                  data-trigger="hover"
+                  data-placement="bottom"
+                  data-content=""
+                  data-original-title=""
+                  title=""
+                  ><i class="fa fa-question-circle" style="font-size:14px;color:#29bb9c;"></i>
+                </a>
+              </p>
+              <div class="row text-center" id="certDetail">
+                <div id="fileCertResult">
+                  <div class="cert-result mb-40">
+                    <div class="cert-icon" style="">
+                      <img id="certFlag" src="images/cert_icon_2x.png" class="img-responsive pull-right" />
+                    </div>
+                    <div class="text-left" style="">
+                      <p class="">
+                        <span class="">Certificate Status</span>
+                      </p>
+                      <p class="" style="margin-bottom:0">
+                        <span class="font-18" style="font-weight:600">
+                          <span class="certStatusSpan" id="certStatus"></span>
+                          <a
+                            href="javascript:void(0);"
+                            id="certStatusExplain"
+                            class="popovers certStatusExplain"
+                            data-html="true"
+                            data-container="body"
+                            data-toggle="popover"
+                            data-trigger="hover"
+                            data-placement="bottom"
+                            data-content=""
+                            data-original-title=""
+                            title=""
+                            ><i class="fa fa-question-circle" style="font-size:14px;color:#29bb9c;"></i
+                          ></a>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-12" style="">
+                    <p class="check-item" style="">
+                      <span class="text-right item-title" style="">Certificate name:</span>
+                      <span class="text-left item-result certNameSpan" id="certName"></span>
+                    </p>
+
+                    <p class="check-item">
+                      <span class="text-right item-title">Expiration:</span>
+                      <span class="text-left item-result certExpireDateSpan" id="certExpireDate"></span>
+                    </p>
+
+                    <div class="provision-detail hide">
+                      <p class="check-item">
+                        <span class="text-right item-title">mobileprovision state:</span>
+                        <span class="text-left item-result" id="provisionStatus"></span>
+                      </p>
+                      <p class="check-item">
+                        <span class="text-right item-title">mobileprovision Expiration:</span>
+                        <span class="text-left item-result" id="provisionExpireDate"></span>
+                      </p>
+                      <p class="check-item provisionSignType hide">
+                        <span class="text-right item-title">Packing method:</span>
+                        <span class="text-left item-result" id="provisionSignType"></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div id="urlCertResult">
+                  <div class="" style="">
+                    <img
+                      id="appIcon"
+                      src="/images/img/default-icon.png"
+                      style=""
+                      class="img-responsive pull-right hide appName img-circle"
+                      onerror="javascript:this.src='/images/img/default-icon.png';"
+                    />
+                  </div>
+                  <div class="col-md-12" style="">
+                    <p class="check-item">
+                      <span class="text-right item-title">Certificate Status:</span>
+                      <span class="font-18 text-left item-result" style="font-weight:500">
+                        <span class="certStatusSpan" id="certStatus"></span>
+                        <a
+                          href="javascript:void(0);"
+                          id="certStatusExplain"
+                          class="popovers certStatusExplain"
+                          data-html="true"
+                          data-container="body"
+                          data-toggle="popover"
+                          data-trigger="hover"
+                          data-placement="bottom"
+                          data-content=""
+                          data-original-title=""
+                          title=""
+                          ><i class="fa fa-question-circle" style="font-size:14px;color:#29bb9c;"></i
+                        ></a>
+                      </span>
+                    </p>
+
+                    <p class="check-item" style="">
+                      <span class="text-right item-title">Certificate name:</span>
+                      <span style="" class="text-left item-result certNameSpan" id="certName"></span>
+                    </p>
+
+                    <p class="check-item">
+                      <span class="text-right item-title">Expiration:</span>
+                      <span class="text-left item-result certExpireDateSpan" id="certExpireDate"></span>
+                    </p>
+
+                    <p class="check-item appName hide">
+                      <span class="text-right item-title">Application Name:</span>
+                      <span class="text-left item-result appName hide" id="appName"></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center row hide" id="search">
+              <img src="images/search.gif" class="img-responsive center-block" />
+              <p class="">checking...</p>
+            </div>
+          </div>
+          <div class="row mb-30">
+            <a style="display: inline-block; padding: 6px 13px;" class="btn-u h-30 mt-30 btn-check hide" id="recheckBtn" onclick="toggleRes()"> <span class="font-13">Continue to detect other certificates</span></a>
+            <button class="btn-u h-30 mt-30 btn-check" id="submitButton"><span class="font-13">Check now</span></button>
+          </div>
+          <div class="alert alert-warning alert-dismissablewarning mb-0 mt-50 text-left" id="fileCheckAlert" style="border-radius:0;border:none;color:#555; margin-bottom: 0px;">
+            <i class="fa fa-exclamation-circle"></i><span class="ml-5" style="margin-left:5px;">The certificate file and password you submit will only be used for this certificate validity test and will not be stored by us.</span> <br />
+            <i class="fa fa-exclamation-circle"></i
+            ><span class="ml-5" style="margin-left:5px;">Certificate test results are 100% accurate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

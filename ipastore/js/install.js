@@ -1,0 +1,1 @@
+No Content: https://seeyouios.store/js/install.js

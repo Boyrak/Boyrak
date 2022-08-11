@@ -131,5 +131,19 @@
             "isLanZouCloud": 1,
             "size": 67591209
         },
+         {
+            "name": "FL Studio",
+            "bundleIdentifier": "com.imageline.FLStudioMobile",
+            "developerName": "RAK",
+            "version": "4.0.12",
+            "versionDate": "2022-08-11T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK & lyheang",
+            "downloadURL": "https://archive.org/download/fl-studio-mobile-4.0.12/FL%20Studio%20Mobile_4.0.12_1655125491.ipa",
+            "localizedDescription": "FL Studio",
+            "iconURL": "https://www.sachcharak.com/image/FLStudioMobile.PNG",
+            "tintColor": "018084",
+            "isLanZouCloud": 1,
+            "size": 248470569
+        },
     ]
 }

@@ -65,7 +65,7 @@
             "name": "Picart Gold-RCS",
             "bundleIdentifier": "www.sachcharak.com",
             "developerName": "RAK",
-            "version": "1.7.08",
+            "version": "20.1.4",
             "versionDate": "2022-08-11T11:36:00+08:00",
             "versionDescription": "Developer Name: RAK & lyheang",
             "downloadURL": "https://archive.org/download/pics-art-rcs-v-20.1.4-premium/PicsArt%20-%20RCS%20%7C%20V20.1.4%20Premium.ipa",
@@ -74,6 +74,20 @@
             "tintColor": "018084",
             "isLanZouCloud": 1,
             "size": 75570872
+        },
+        {
+            "name": "DJAY PRO-RCS",
+            "bundleIdentifier": "com.algoriddim.djay-iphone-free.rcs",
+            "developerName": "RAK",
+            "version": "4.0",
+            "versionDate": "2022-08-11T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK & lyheang",
+            "downloadURL": "https://archive.org/download/djay-pro-rcs/Djay%20Pro%20-%20RCS.ipa",
+            "localizedDescription": "Djay Pro",
+            "iconURL": "https://www.sachcharak.com/image/DJAYPRO-RCS.PNG",
+            "tintColor": "018084",
+            "isLanZouCloud": 1,
+            "size": 199302840
         },
     ]
 }

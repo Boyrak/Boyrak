@@ -4,21 +4,6 @@
     "sourceURL": "https://www.sachcharak.com/esign/repo/RAK.json",
     "apps": [
 
-   
-        {
-            "name": "Unc0ver",
-            "bundleIdentifier": "science.xnu.undecimus",
-            "developerName": "Unc0ver Team",
-            "version": "8.0.2",
-            "versionDate": "2022-06-12T11:36:00+08:00",
-            "versionDescription": "Unc0ver 8.0.2\nSupport A12 & A13\nIos 14.4+",
-            "downloadURL": "https://unc0ver.dev/downloads/8.0.2/9e44edfbfd1905cadf23c3b9ad1d5bed683ce061/unc0ver_Release_8.0.2.ipa",
-            "localizedDescription": "Unc0ver",
-            "iconURL": "https://tweak-box.com/wp-content/uploads/2019/04/uncover-unc0ver-Icon-app-200px.png",
-            "tintColor": "018084",
-            "isLanZouCloud": 1,
-            "size": 4216246
-        },
         {
             "name": "Car Parking",
             "bundleIdentifier": "com.aidana.cardriving.ios",

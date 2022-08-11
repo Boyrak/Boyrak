@@ -33,19 +33,47 @@
             "isLanZouCloud": 1,
             "size": 5.535e+8
         },
-        {
+       {
             "name": "Mobile legends: Bang Bang",
             "bundleIdentifier": "com.mobile.legends",
             "developerName": "RAK",
             "version": "1.7.08",
             "versionDate": "2022-08-11T11:36:00+08:00",
-            "versionDescription": "developerName: RAK & lyheang\nOriginal + IGG",
+            "versionDescription": "Developer Name: RAK & lyheang\nOriginal + IGG",
             "downloadURL": "https://archive.org/download/mobile-legends-bang-bang-v-1.7.08/Mobile%20legends%3A%20Bang%20Bang%20V1.7.08.ipa",
             "localizedDescription": "MLB",
             "iconURL": "https://www.sachcharak.com/image/MLB.JPEG",
             "tintColor": "018084",
             "isLanZouCloud": 1,
             "size": 167814103
+        },
+        {
+            "name": "CPU X - RCS",
+            "bundleIdentifier": "www.sachcharak.com",
+            "developerName": "RAK",
+            "version": "1.7.08",
+            "versionDate": "2022-08-11T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK & lyheang",
+            "downloadURL": "https://archive.org/download/cup-x-rcs-v-1.4.2/CUP-x%20-%20RCS%20%7C%20V%201.4.2.ipa",
+            "localizedDescription": "CPU X",
+            "iconURL": "https://www.sachcharak.com/image/CPU_X.PNG",
+            "tintColor": "018084",
+            "isLanZouCloud": 1,
+            "size": 26245857
+        },
+        {
+            "name": "Picart Gold-RCS",
+            "bundleIdentifier": "www.sachcharak.com",
+            "developerName": "RAK",
+            "version": "1.7.08",
+            "versionDate": "2022-08-11T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK & lyheang",
+            "downloadURL": "https://archive.org/download/pics-art-rcs-v-20.1.4-premium/PicsArt%20-%20RCS%20%7C%20V20.1.4%20Premium.ipa",
+            "localizedDescription": "Picart",
+            "iconURL": "https://www.sachcharak.com/image/PicartGold-RCS.PNG",
+            "tintColor": "018084",
+            "isLanZouCloud": 1,
+            "size": 75570872
         },
     ]
 }

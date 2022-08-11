@@ -103,5 +103,19 @@
             "isLanZouCloud": 1,
             "size": 268550799
         },
+         {
+            "name": "Incredibox-RCS",
+            "bundleIdentifier": "com.sofarsogood.incredibox",
+            "developerName": "RAK",
+            "version": "0.5.2",
+            "versionDate": "2022-08-11T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK & lyheang",
+            "downloadURL": "https://archive.org/download/incredibox-rcs/Incredibox%20-%20RCS.ipa",
+            "localizedDescription": "Incredibox-RCS",
+            "iconURL": "https://www.sachcharak.com/image/Incredibox-RCS.PNG",
+            "tintColor": "018084",
+            "isLanZouCloud": 1,
+            "size": 154256015
+        },
     ]
 }

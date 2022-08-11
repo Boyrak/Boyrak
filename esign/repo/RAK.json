@@ -145,5 +145,19 @@
             "isLanZouCloud": 1,
             "size": 248470569
         },
+        {
+            "name": "CarX DR2 - RCS",
+            "bundleIdentifier": "com.carx-tech.carxdr2",
+            "developerName": "RAK",
+            "version": "1.21.1",
+            "versionDate": "2022-08-11T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK & lyheang\nFree Purchase",
+            "downloadURL": "https://archive.org/download/car-x-dr-2-rcs-v-1.21.1/CarX%20DR2%20-%20RCS%20V1.21.1.ipa",
+            "localizedDescription": "CarX DR2 - RCS",
+            "iconURL": "https://www.sachcharak.com/image/CarXDR2-RCS.PNG",
+            "tintColor": "018084",
+            "isLanZouCloud": 1,
+            "size": 1.98e+9
+        },
     ]
 }

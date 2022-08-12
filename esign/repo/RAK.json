@@ -146,7 +146,7 @@
         },
          {
             "name": "KineMaster Pro",
-            "bundleIdentifier": "http://com.kinemaster.app",
+            "bundleIdentifier": "com.kinemaster.app",
             "developerName": "RAK",
             "version": "5.2.11",
             "versionDate": "2022-08-11T11:36:00+08:00",
@@ -157,6 +157,20 @@
             "tintColor": "018084",
             "isLanZouCloud": 1,
             "size": 81117839
+        },
+         {
+            "name": "CarX Street",
+            "bundleIdentifier": "com.carxtech.sr",
+            "developerName": "RAK",
+            "version": "0.4.2",
+            "versionDate": "2022-08-12T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK & lyheang\nIGG + RCS MOD\nTelegram:RAK\n@RcSrAK",
+            "downloadURL": "https://archive.org/download/car-x-street-rcs-0.4.2-2/CarX%20Street%20-%20RCS_0.4.2_.ipa",
+            "localizedDescription": "CarX Street",
+            "iconURL": "https://www.sachcharak.com/image/CarXStreetV0.4.2.PNG",
+            "tintColor": "018084",
+            "isLanZouCloud": 1,
+            "size": 2.749e+10
         },
     ]
 }

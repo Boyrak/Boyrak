@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<head>
+    <title class="i18n">轻松签</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-title" content="轻松签">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="轻松签是一款免越狱可给ipa签名的工具，具有注入库，去库等功能">
+    <meta name="keywords" content="轻松签 - 免越狱 签名|重签|iOS|ipa|注入|多开|去锁">
+    <meta name="i18n_file" content="sign">
+    <meta name="page" content="sign">
+    <link rel="stylesheet" href="./statics/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./statics/bootstrap/bootstrap-icons-1.8.1/bootstrap-icons.css">
+    <link rel="stylesheet" href="./statics/css/viewGreen.css">
+    <script src="./statics/js/jquery-1.10.1.min.js"></script>
+    <script src="./statics/bootstrap/js/bootstrap.min.js "></script>
+    <script src="./statics/i18n/jquery.i18n.properties.js"></script>
+    <script src="./statics/js/language.js"></script>
+    <script src="./statics/js/cvi_busy_lib.js"></script>
+    <script src="./statics/js/sign.js"></script>
+    <script src="./statics/js/nav.js"></script>
+    <script src="./statics/js/appInfo.js"></script>
+
+</head>
+
+<body>
+    <ul class="nav nav-pills">
+        <li id="nav_index" style="margin-left: 20px;"><a href="./index.html " data-toggle="tab " class="i18n">首页</a></li>
+        <li id="nav_sign"><a href="./sign.html " data-toggle="tab " class="i18n">签名</a></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle " data-toggle="dropdown" href="#" id="language">
+                <span class="i18n">语言</span> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li id="nav_zh"><a href="#" onclick="changeLanguage('zh-CN')">中文</a></li>
+                <li id="nav_en"><a href="#" onclick="changeLanguage('en')">English</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div id="header"></div>
+    <div class="container">
+
+        <!-- logo -->
+        <div id="appicon-bg">
+            <img src="./ESignLogo200.png " class="appicon" />
+        </div>
+
+        <!-- appinfo -->
+        <div style="margin: 10px;">
+            <div id="appinfo">
+                <h2 id="appName" style="color:#333;size:24px; ">轻松签</h2>
+                <div id="appBundleId" style="color:#555;size:22px;">bundleId</div>
+                <div class="label label-info" id="appVersion" style="margin-top: 10px;">
+                    1.0.0
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div style="font-size:11px;">
+                <span style="color: #989899;" class="i18n"> 使用自己的P12证书在线签名安装</span>
+            </div>
+
+            <form style="margin-top: 10px;">
+                <input type="file" name="uploadfile" class="hide" onchange="handleFileUpload(this.files, $(this))" data-target="" id="uploadfile">
+
+                <div id="certFile" style="font-size: 12px;">
+                    <div style="text-align: center; overflow:hidden">
+
+                        <div class="col" style="color: #000000;">
+                            <div class="upload-img-init" id="uploadCert">
+                                <div id="p12Div">
+                                    <img id="" src="./statics/img/p12_file_2x.png" width="45px">
+                                    <div style="color: #cdcdce; margin-top: 10px;" class="i18n">选择文件</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col" style="color: #000000;">
+                            <div class="upload-img-init" id="uploadProvision">
+                                <div id="mpDiv">
+                                    <img id="" src="./statics/img/mp_icon_2x.png" width="45px">
+                                    <div style="color: #cdcdce; margin-top: 10px;" class="i18n">选择文件</div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div style="margin-top:15px;text-align: center;">
+                    <input class="i18n" data-ptype="placeholder" type="text" id="password" name="password" placeholder="请输入p12证书密码">
+                </div>
+
+                <div style="margin-bottom:40px; margin-top: 10px;">
+                    <a onclick="signHandle()" class="btn i18n">立即签名</a>
+                </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+
+    <!-- <div id="footer" class="pcshow"> Copyright ©2022 ESign Inc. All right reserved </div> -->
+</body>
+
+</html>

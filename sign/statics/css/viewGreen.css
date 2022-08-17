@@ -1,0 +1,225 @@
+@charset "UTF-8";
+body {
+    color: #969b9d;
+    size: 14px;
+    font-family: 'NotoSansHans-Regular,AvenirNext-Regular,proxima-nova,"Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei","Open Sans","Helvetica Neue",Arial,sans-serif';
+}
+
+#header {
+    background-color: #52ABF8;
+    height: 150px;
+    width: auto;
+}
+
+#footer {
+    height: 30px;
+    line-height: 30px;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #999;
+    font-family: Arial;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+#appicon-bg {
+    box-shadow: 0 10px 29px rgba(0, 0, 0, .06);
+    ;
+    -webkit-transition: box-shadow 0.2s ease-in-out;
+    -moz-transition: box-shadow 0.2s ease-in-out;
+    -o-transition: box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
+    width: 150px;
+    height: 150px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border-radius: 24px;
+    border: none;
+    background-color: #ffffff;
+    padding: 15px;
+    margin: auto;
+    margin-top: -110px;
+    margin-bottom: 30px;
+}
+
+/* 输入框 */
+input,
+input[type="text"]{
+    height:29px;
+    width:44%;
+    font-size: 11px;
+    border-top: 1px; 
+    border-radius: 10px;
+    padding: 0 18px;
+    border:1px solid #52ABF8;
+    margin-bottom: 0px;
+}
+
+/* logo */
+.appicon {
+    border: none;
+    border-radius: 24px;
+}
+
+/* 按钮 */
+.btn {
+    margin-top: 0px;
+    background: #52ABF8;
+    width: 140px;
+    padding: 10px;
+    color: white;
+    /* font-weight: normal; */
+    border-radius: 12px;
+    border-color: #52ABF8 !important;
+    font-size: 15px;
+    text-shadow: none;
+}
+.btn:hover {
+    background: #0a80e7;
+    color: white;
+}
+
+.btn-s {
+    display:inline-block;
+    height: 25px;
+    line-height: 25px;
+    background: #5bccde;
+    width: 65px;
+    /* padding: 6px; */
+    color: white;
+    /* font-weight: normal; */
+    border-radius: 5px;
+    border-color: #5bccde;
+    font-size: 10px;
+    text-shadow: none;
+}
+.btn-s:hover {
+    background: #52ABF8;
+    color: white;
+}
+
+
+
+
+/* 主体 */
+.container {
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    padding-bottom: 50px;
+    width: 750px;
+}
+
+/* 导航 */
+.nav-pills {
+    margin-bottom: 0px;
+    background-color: #52ABF8;
+}
+
+.nav-pills>li>a {
+    color: white;
+}
+
+.nav-pills>li.active>a {
+    color: red;
+    background-color: #52ABF8;
+}
+
+.nav-pills>li.active>a:hover {
+    color: red;
+    background-color: #52ABF8;
+}
+
+.nav-pills>li>a:hover {
+    color: #52ABF8;
+    background-color: white;
+}
+
+/* label */
+.label-info {
+    background-color: #5bc0de;
+    padding: 3px 7px;
+}
+
+.label {
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.col {
+    width: 50%;
+    float: left;
+}
+
+.description {
+    color: #666666;
+    text-align: left;
+}
+
+.upload-img-init {
+    height: 120px;
+    /* min-height: 150px; */
+    border: 1px dashed #DDD;
+    border-radius: 6px;
+    color: #DDD;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative
+}
+
+.file-name {
+    color: #333;
+}
+
+.upload-img-init .file-name {
+    word-break: break-word
+}
+
+.pcshow {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .pcshow {
+        display: none;
+    }
+    .container {
+        width: auto;
+        padding-bottom: 10px;
+    }
+}
+
+/* iPhone8P 手机大小 */
+@media(max-width: 414px) {
+    #header {
+        height: 100px;
+    }
+    #appicon-bg {
+        box-shadow: 0 10px 29px rgba(0, 0, 0, .06);
+        ;
+        -webkit-transition: box-shadow 0.2s ease-in-out;
+        -moz-transition: box-shadow 0.2s ease-in-out;
+        -o-transition: box-shadow 0.2s ease-in-out;
+        transition: box-shadow 0.2s ease-in-out;
+        width: 100px;
+        height: 100px;
+        -webkit-border-radius: 24px;
+        -moz-border-radius: 24px;
+        border-radius: 24px;
+        border: none;
+        background-color: #ffffff;
+        padding: 12px;
+        margin: auto;
+        margin-top: -70px;
+        margin-bottom: 30px;
+    }
+}

@@ -1,7 +1,9 @@
 {
     "name": "RAK",
     "identifier": "@RcSrAK",
-    "sourceURL": "https://www.sachcharak.com/esign/repo/RAK.json",
+    "sourceURL": "https://www.sachcharak.com",
+    "sourceImage": "https://www.sachcharak.com/RAK.PNG",
+    "sourcceDescription": "Telegram: RAK / Contact: @RcSrAK",
     "apps": [
 
         {

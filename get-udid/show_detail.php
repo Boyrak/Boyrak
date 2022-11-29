@@ -1,0 +1,195 @@
+<?php 
+    $subject = "This is my UDID from iOS device";
+    $body  = "Hello<br /> This is my UDID: {$_GET['UDID']} <br />";
+    $body .= "Device product: {$_GET['DEVICE_PRODUCT']} <br />";
+    $body .= "Device version: {$_GET['DEVICE_VERSION']} <br />";
+    $body .= "Device name: {$_GET['DEVICE_NAME']} <br />";
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+       <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://www.sachcharak.com/RAK.PNG">
+    <link rel="apple-touch-icon" href="https://www.sachcharak.com/RAK.PNG">
+    <link rel="icon" type="image/png" href="https://www.sachcharak.com/RAK.PNG">
+    <title>Lyheang</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.sachcharak.com/css/rak.css">
+    <link rel="stylesheet" href="https://www.sachcharak.com/css/rak1.css">
+    <link rel="stylesheet" href="https://www.sachcharak.com/css/rak2.css">
+    <link rel="stylesheet" href="https://www.sachcharak.com/css/rak3.css">
+    <link rel="stylesheet" href="https://www.sachcharak.com/css/rak4.css">
+
+<style>
+body, html{
+	margin:0px;
+	font-family:helvetica;
+	overflow-x:hidden;
+	height:100%;
+	background: rgb(255, 255, 255) url(https://www.sachcharak.com/bg/Backgroud.png) no-repeat;
+  background-size: 100%;
+            width: 100%;
+            height: 100%;
+}
+        #wrap_page{
+            background: rgb(255, 255, 255) url(https://www.sachcharak.com/bg/Backgroud.png) no-repeat;
+            background-size: 100%;
+                    width: 100%;
+                    height: 200%;
+}
+:root {
+		  --main-color: rgb(54, 124, 215);
+	}   
+
+        * {box-sizing: border-box;}
+      body {font-family: Verdana, sans-serif;}
+      .mySlides {display: none;}
+      img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}  
+  .sticky-container{ 
+        padding:0px; 
+        margin:0px; 
+        position:fixed; 
+        left:-145px; 
+        top:350px; 
+        width:225px; 
+        z-index: 1100; 
+    } 
+        
+    .sticky li{ 
+        list-style-type:none; 
+        background-color:#0000005c; 
+        border-radius: 15px; 
+        color:#efefef; 
+        height:43px; 
+        padding:0px; 
+        margin:0px 0px 1px 0px; 
+        -webkit-transition:all 0.25s ease-in-out; 
+        -moz-transition:all 0.25s ease-in-out; 
+        -o-transition:all 0.25s ease-in-out; 
+        transition:all 0.25s ease-in-out; 
+        cursor:pointer; 
+    } 
+    .sticky li:hover{ 
+        margin-right:-115px; 
+    } 
+    .sticky li img{ 
+        float:right; 
+        margin:5px 4px; 
+        margin-left:5px; 
+    } 
+    .sticky li p{ 
+        padding-top:5px; 
+        margin:0px; 
+        line-height:16px; 
+        font-size:11px; 
+    } 
+    .sticky li p a{ 
+        text-decoration:none; 
+        color:#fff; 
+    } 
+    .sticky li p a:hover{ 
+        text-decoration:underline; 
+    } 
+    </style>
+    </head>
+    <body>
+        <center>
+<header id="headerMobile" class="container__header__mobile">
+ <a href="https://www.sachcharak.com">
+ <div class="logo">
+ <img class="image" style="margin:10px;border-radius:10px;;margin-top:40px;" src="https://www.sachcharak.com/RAK.PNG" width="47" alt="">
+ </div>
+ </a>
+ <div class="wrapper">
+	<a class="nav-link" href="#
+	rel="VkRJNFpsSmhkMGRSU0UxVk4wbHpObTlFU1M5eFVUMDlPanFwNGlGQXhRUjJKMVJ0WWdiS1hmeW4=" id="changeLang" role="button">
+	<img src="https://lyheang.com/img/cambodia.png" width="50" />
+	</a>
+</center>
+  <section class="isipho__breadcrumb hm">
+    <div class="wrapper">
+    <a href="https://sachcharak.com/get-udid" class="link active">Back</a>
+    </div>
+    </section>
+    </center>
+     <center>
+<section class="container__availablepackages">
+		<article class="package__premium">
+		<div class="top__badge">
+		<span>You Device information</span>
+		</div>
+		<div class="top">
+		<p>UDID : <?php echo $_GET['UDID']; ?></p>
+		<p>Device Product : <?php echo $_GET['DEVICE_PRODUCT']; ?></p>
+		<p>Device Version : <?php echo $_GET['DEVICE_VERSION']; ?></p>
+		</ul>
+		</div>
+		</article>
+		</section>
+</center>
+
+    </body>
+</html>

@@ -17,13 +17,13 @@
 <key>metadata</key>
 <dict>
 <key>bundle-identifier</key>
-<string>p3.xyz.yyyue.esign</string>
+<string>sachcharak.com.RAK-Store</string>
 <key>bundle-version</key>
-<string>4.7.4</string>
+<string>1.0</string>
 <key>kind</key>
 <string>software</string>
 <key>title</key>
-<string>ESign</string>
+<string>RAK Store </string>
 </dict>
 </dict>
 </array>

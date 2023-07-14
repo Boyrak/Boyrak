@@ -28,7 +28,7 @@ function link4(){
   function hp2() {
     h5gg.clearResults();
     h5gg.searchNumber('5900', 'F32', '0x100000000', '0x200000000'); 
-    h5gg.editAll('1000', 'F32'); 
+    h5gg.editAll('1111', 'F32'); 
     
 }
   
@@ -88,7 +88,7 @@ function link4(){
     h5gg.editAll('2000', 'F32'); 
       h5gg.clearResults();
     h5gg.searchNumber('5900', 'F32', '0x100000000', '0x200000000'); 
-    h5gg.editAll('1000', 'F32'); 
+    h5gg.editAll('1111', 'F32'); 
       h5gg.clearResults();
     h5gg.searchNumber('4100', 'F32', '0x100000000', '0x200000000'); 
     h5gg.editAll('1300', 'F32');  

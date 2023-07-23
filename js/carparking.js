@@ -94,3 +94,26 @@ function link4(){
     h5gg.editAll('1300', 'F32');  
     
 }
+
+function glll() 
+{
+
+  
+       if (remember.checked == 1)
+    {
+       h5gg.clearResults();
+      h5gg.searchNumber('700', 'F32', '0x0', '0x200000000');
+      h5gg.editAll('500168', 'F32');
+      h5gg.clearResults();
+    }
+    else 
+    {
+            h5gg.clearResults();
+      h5gg.searchNumber('500168', 'F32', '0x0', '0x200000000');
+      h5gg.editAll('700', 'F32');
+      h5gg.clearResults();
+    }
+ 
+
+
+}

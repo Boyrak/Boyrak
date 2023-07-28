@@ -19,7 +19,7 @@
 <key>bundle-identifier</key>
 <string>p3.xyz.yyyue.esign</string>
 <key>bundle-version</key>
-<string>4.7.4</string>
+<string>4.8.1</string>
 <key>kind</key>
 <string>software</string>
 <key>title</key>
@@ -34,4 +34,5 @@ Free Cert | Revocation soon ✅</string>
 </array>
 </dict>
 </plist>
+
 

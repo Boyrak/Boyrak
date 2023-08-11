@@ -1,4 +1,4 @@
-<script>
+
 function am() {
   console.log("Button clicked!");
   // Add your code logic here
@@ -18,9 +18,9 @@ function am() {
   
   
 
-</script>
 
-      <script>
+
+     
       function sp() {
   console.log("Button clicked!");
   // Add your code logic here
@@ -37,8 +37,7 @@ function am() {
         
         document.getElementById("myButton2").addEventListener("click", sp);
   
-      </script>
-      <script>
+    
   function handleClick() {
   console.log("Button clicked!");
   // Add your code logic here
@@ -57,4 +56,4 @@ function am() {
   document.getElementById("myButton3").addEventListener("click", handleClick);
   
 
-      </script>
+     

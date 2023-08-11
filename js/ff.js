@@ -1,4 +1,26 @@
 <script>
+function am() {
+  console.log("Button clicked!");
+  // Add your code logic here
+    h5gg.clearResults();
+    h5gg.searchNumber('1057048494', 'I32', '0x100000000', '0x200000000'); 
+    h5gg.searchNearby('1054951342', 'I32' , '0x100');
+    h5gg.searchNearby('1053273620', 'I32' , '0x100');
+    h5gg.editAll('-20000', 'I32'); 
+    h5gg.clearResults();
+    h5gg.searchNumber('0.00001', 'F32', '0x100000000', '0x200000000'); 
+    h5gg.editAll('1', 'F32'); 
+  // Remove the event listener after the first click
+  document.getElementById("myButton1").removeEventListener("click", am);
+}
+
+ document.getElementById("myButton1").addEventListener("click", am);
+  
+  
+
+</script>
+
+      <script>
       function sp() {
   console.log("Button clicked!");
   // Add your code logic here

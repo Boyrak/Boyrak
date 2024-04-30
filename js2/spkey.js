@@ -10,7 +10,9 @@ var app = new Vue({
           { value: "4", created: new Date(), expirationDate: null, expired: false },
           { value: "5", created: new Date(), expirationDate: null, expired: false },
           { value: "20", created: new Date(), expirationDate: new Date("2024-05-01"), expired: false },
+          { value: "gkkRcpFuYXMZVzGG", created: new Date(), expirationDate: new Date("2024-05-01"), expired: false },
         
+       
         ],
         isPasswordCorrect: false,
         linkToCopy: 'https://t.me/RcSrAK',
@@ -75,10 +77,91 @@ alertBox.style.transform = 'translate(-50%, -50%)';
         } else {
           this.currentAttempt++;
           if (this.currentAttempt >= this.maxAttempts) {
-            alert("Too many attempts. Please try again later.");
+           
             // Handle what to do if the maximum attempts are reached
+               
+var message = "Too many attempts. Please try again later.";
+var telegramLink = "https://t.me/RcSrAK";
+
+var alertBox = document.createElement('div');
+alertBox.className = 'alert';
+
+// Create the close button
+var closeButton = document.createElement('span');
+closeButton.className = 'closebtn';
+closeButton.innerHTML = '&times;';
+closeButton.onclick = function() {
+    alertBox.style.display = 'none';
+};
+
+// Create the message
+var messageNode = document.createElement('strong');
+messageNode.innerHTML = message + ' ';
+
+// Create the Telegram button
+var telegramButton = document.createElement('a');
+telegramButton.href = telegramLink;
+telegramButton.target = '_blank';
+telegramButton.className = 'telegram-btn';
+telegramButton.innerHTML = 'Send Message';
+
+// Append elements to the alert box
+alertBox.appendChild(closeButton);
+alertBox.appendChild(messageNode);
+alertBox.appendChild(telegramButton);
+
+// Append the alert box to the body
+document.body.appendChild(alertBox);
+
+// Center the alert box
+alertBox.style.position = 'fixed';
+alertBox.style.top = '50%';
+alertBox.style.left = '50%';
+alertBox.style.transform = 'translate(-50%, -50%)';
+
+
           } else {
-            alert("Incorrect password. Please try again.");
+  
+var message = "Incorrect password. Please try again.";
+var telegramLink = "https://t.me/RcSrAK";
+
+var alertBox = document.createElement('div');
+alertBox.className = 'alert';
+
+// Create the close button
+var closeButton = document.createElement('span');
+closeButton.className = 'closebtn';
+closeButton.innerHTML = '&times;';
+closeButton.onclick = function() {
+    alertBox.style.display = 'none';
+};
+
+// Create the message
+var messageNode = document.createElement('strong');
+messageNode.innerHTML = message + ' ';
+
+// Create the Telegram button
+var telegramButton = document.createElement('a');
+telegramButton.href = telegramLink;
+telegramButton.target = '_blank';
+telegramButton.className = 'telegram-btn';
+telegramButton.innerHTML = 'Send Message';
+
+// Append elements to the alert box
+alertBox.appendChild(closeButton);
+alertBox.appendChild(messageNode);
+alertBox.appendChild(telegramButton);
+
+// Append the alert box to the body
+document.body.appendChild(alertBox);
+
+// Center the alert box
+alertBox.style.position = 'fixed';
+alertBox.style.top = '50%';
+alertBox.style.left = '50%';
+alertBox.style.transform = 'translate(-50%, -50%)';
+
+
           }
         }
       },
@@ -89,7 +172,48 @@ alertBox.style.transform = 'translate(-50%, -50%)';
         tempInput.select();
         document.execCommand("copy");
         document.body.removeChild(tempInput);
-        alert('Link has been copied to clipboard!');
+    
+           
+var message = "Link has been copied to clipboard!";
+var telegramLink = "https://t.me/RcSrAK";
+
+var alertBox = document.createElement('div');
+alertBox.className = 'alert';
+
+// Create the close button
+var closeButton = document.createElement('span');
+closeButton.className = 'closebtn';
+closeButton.innerHTML = '&times;';
+closeButton.onclick = function() {
+    alertBox.style.display = 'none';
+};
+
+// Create the message
+var messageNode = document.createElement('strong');
+messageNode.innerHTML = message + ' ';
+
+// Create the Telegram button
+var telegramButton = document.createElement('a');
+telegramButton.href = telegramLink;
+telegramButton.target = '_blank';
+telegramButton.className = 'telegram-btn';
+telegramButton.innerHTML = 'Send Message';
+
+// Append elements to the alert box
+alertBox.appendChild(closeButton);
+alertBox.appendChild(messageNode);
+alertBox.appendChild(telegramButton);
+
+// Append the alert box to the body
+document.body.appendChild(alertBox);
+
+// Center the alert box
+alertBox.style.position = 'fixed';
+alertBox.style.top = '50%';
+alertBox.style.left = '50%';
+alertBox.style.transform = 'translate(-50%, -50%)';
+
+
       },
       changeTab(tabName) {
         this.tabValue = tabName;

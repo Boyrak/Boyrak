@@ -157,7 +157,7 @@ var app = new Vue({
           { value: "4", created: new Date(), expirationDate: null, expired: false },
           { value: "5", created: new Date(), expirationDate: null, expired: false },
           { value: "20", created: new Date(), expirationDate: new Date("2024-05-01"), expired: false },
-          { value: "gkkRcpFuYXMZVzGG", created: new Date(), expirationDate: new Date("2024-05-01"), expired: false },
+          { value: "gkkRcpFuYXMZVzGG", created: new Date(), expirationDate: new Date("2024-05-30"), expired: false },
         
        
         ],

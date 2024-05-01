@@ -143,7 +143,6 @@
 
 
 
-
 var app = new Vue({
     el: "#app",
     data() {
@@ -155,8 +154,9 @@ var app = new Vue({
           { value: "3", created: new Date(), expirationDate: new Date("2024-04-29"), expired: false },
           { value: "4", created: new Date(), expirationDate: null, expired: false },
           { value: "5", created: new Date(), expirationDate: null, expired: false },
-          { value: "20", created: new Date(), expirationDate: new Date("2024-05-01"), expired: false },
+          { value: "20", created: new Date(), expirationDate: new Date("2024-05-01T23:00:00"), expired: false },
           { value: "gkkRcpFuYXMZVzGG", created: new Date(), expirationDate: new Date("2024-05-30"), expired: false },
+          { value: "zwyZknBhpCDI", created: new Date(), expirationDate: new Date("2024-05-01T23:59:00"), expired: false },
         
        
         ],

@@ -30,9 +30,8 @@ var app = new Vue({
         { value: "2", created: new Date(), expirationDate: new Date("2024-04-28"), expired: false },
         { value: "3", created: new Date(), expirationDate: new Date("2024-04-29"), expired: false },
         { value: "4", created: new Date(), expirationDate: null, expired: false },
-        { value: "5", created: new Date(), expirationDate: null, expired: false },
-        { value: "20", created: new Date(), expirationDate: new Date("2024-05-01"), expired: false },
-        { value: "gkkRcpFuYXMZVzGG", created: new Date(), expirationDate: new Date("2024-05-30"), expired: false },
+        { value: "5", created: new Date(), expirationDate: null, expired: false }
+       
       ],
       isPasswordCorrect: false,
       linkToCopy: 'https://t.me/RcSrAK',

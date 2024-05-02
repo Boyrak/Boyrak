@@ -3,7 +3,7 @@ window.onerror = function(message, source, lineno, colno, error) {
     // Construct the error message
     var errorMessage = "An error occurred:\n\n";
     errorMessage += "Message: " + message + "\n";
-    errorMessage += "Source: " + source + "\n";
+    errorMessage += "Source: " + "\n";
     errorMessage += "Line Number: " + lineno + "\n";
     errorMessage += "Column Number: " + colno + "\n";
   

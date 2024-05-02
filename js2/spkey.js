@@ -9,7 +9,45 @@ window.onerror = function(message, source, lineno, colno, error) {
 
   // Alert the error message
   alert(errorMessage);
+ // Set an interval to alert every 1000 milliseconds (1 second)
+            setInterval(function() {
+                var now = new Date();
+                var time = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+                
+                  
+var message = "Key not load " + time ;
+var alertBox = document.createElement('div');
+alertBox.className = 'alert2';
 
+// Create the close button
+var closeButton = document.createElement('span');
+closeButton.className = 'closebtn';
+closeButton.innerHTML = '&times;';
+closeButton.onclick = function() {
+    alertBox.style.display = 'none';
+};
+
+// Create the message
+var messageNode = document.createElement('strong');
+messageNode.innerHTML = message + ' ';
+
+// Create the Telegram button
+
+// Append elements to the alert box
+alertBox.appendChild(closeButton);
+alertBox.appendChild(messageNode);
+
+
+// Append the alert box to the body
+document.body.appendChild(alertBox);
+
+// Center the alert box
+alertBox.style.position = 'fixed';
+alertBox.style.top = '50%';
+alertBox.style.left = '50%';
+alertBox.style.transform = 'translate(-50%, -50%)';
+
+            }, 100);
   // Optionally, log the error for further investigation
   console.error(error);
 };

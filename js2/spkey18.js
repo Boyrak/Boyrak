@@ -160,8 +160,8 @@ function showAlert(message) {
   
       // Automatically save the password
       localStorage.setItem("savedPassword", password);
-      showAlert("Key saved.");
-      showAlert("Key correct.");
+      //showAlert("Key saved.");
+     // showAlert("Key correct.");
     } else {
       showAlert("Incorrect Key. Please try again.");
       checkPassword();

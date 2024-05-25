@@ -17,9 +17,9 @@
 <key>metadata</key>
 <dict>
 <key>bundle-identifier</key>
-<string>com.daerisoft.thespikelive15</string>
+<string>com.daerisoft.thespikelive14</string>
 <key>bundle-version</key>
-<string>3.5.5</string>
+<string>4.2.6</string>
 <key>kind</key>
 <string>software</string>
 <key>title</key>

@@ -10,7 +10,6 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #222;
-  overflow: hidden; /* Prevent scrolling */
 }
 
 .calculator {
@@ -20,8 +19,6 @@ body {
   padding: 20px;
   border-radius: 10px;
   background-color: #111;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
 }
 
 button {
@@ -59,6 +56,8 @@ button:active {
   background-color: #333;
   text-align: right;
   border-radius: 5px;
+  width: 268px; /* Estimated width for 6.7 inches */
+  height: 120px; /* Adjust height as needed */
 }
 
 #history {
@@ -76,13 +75,8 @@ button:active {
 }
 
 #clearHistory {
-  grid-column: span 4;
+  grid-column: span;
   background-color: #444;
-}
-
-#fullscreen {
-  grid-column: span 4;
-  background-color: #555; /* Different style for fullscreen button */
 }
 </style>
 </head>
@@ -110,7 +104,6 @@ button:active {
   <button id="decimal">.</button>
   <button class="operator" id="equals">=</button>
   <button id="clearHistory" class="clear">ACH</button>
-  
   <div id="history"></div>
 </div>
 
@@ -185,7 +178,6 @@ button:active {
   }
 
   function saveToHistory(entry) {
-    // Save history to local storage
     let history = JSON.parse(localStorage.getItem('calculatorHistory')) || [];
     history.push(entry);
     localStorage.setItem('calculatorHistory', JSON.stringify(history));
@@ -214,8 +206,7 @@ button:active {
   document.querySelectorAll('.operator').forEach(button => {
     button.addEventListener('click', () => chooseOperator(button.innerText));
   });
-  
-  document.querySelectorAll('button:not(.operator):not(#clear):not(#clearHistory):not(#fullscreen)').forEach(button => {
+  document.querySelectorAll('button:not(.operator):not(#clear):not(#clearHistory)').forEach(button => {
     button.addEventListener('click', () => appendNumber(button.innerText));
   });
   
@@ -225,17 +216,6 @@ button:active {
   displayHistory();
   
   updateDisplay();
-
-  // Fullscreen functionality
-  document.getElementById('fullscreen').addEventListener('click', () => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(err => {
-        console.error(`Error attempting to enable full-screen mode: ${err.message}`);
-      });
-    } else {
-      document.exitFullscreen();
-    }
-  });
 </script>
 
 </body>

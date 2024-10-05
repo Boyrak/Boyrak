@@ -1,238 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Calculator with History</title>
-<style>
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #222;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+    }
 
-  .header {
-    color: white;
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
+    .calculator {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      max-width: 100%;
+    }
 
-  .calculator {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #111;
-    width: 90vw;
-    height: 90vh;
-  }
+    .display {
+      background-color: #222;
+      color: white;
+      padding: 15px;
+      text-align: right;
+      font-size: 24px;
+    }
 
-  button {
-    padding: 20px;
-    font-size: 50px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-  }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
 
-  button:hover {
-    background-color: #555;
-  }
+    button {
+      background-color: #eee;
+      border: none;
+      padding: 15px;
+      font-size: 18px;
+      cursor: pointer;
+    }
 
-  button:active {
-    background-color: #777;
-  }
+    button:hover {
+      background-color: #ddd;
+    }
 
-  .operator {
-    background-color: orange;
-    color: white;
-  }
+    .operator {
+      background-color: #f5923e;
+      color: white;
+    }
 
-  .clear {
-    grid-column: span 2;
-  }
-
-  #display {
-    grid-column: span 4;
-    padding: 20px;
-    font-size: 50px;
-    color: white;
-    background-color: #333;
-    text-align: right;
-    border-radius: 5px;
-  }
-
-  #history {
-    grid-column: span 4;
-    max-height: 150px;
-    overflow-y: auto;
-    background-color: #444;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-  }
-
-  .history-item {
-    padding: 5px 0;
-  }
-
-  #clearHistory {
-    grid-column: span;
-    background-color: #444;
-  }
-</style>
+    .history {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+  </style>
 </head>
 <body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button onclick="clearDisplay()">AC</button>
+      <button onclick="toggleSign()">+/-</button>
+      <button onclick="appendOperator('%')">%</button>
+      <button class="operator" onclick="appendOperator('/')">/</button>
 
-<div class="header">Calculator</div>
-<div class="calculator">
-  <div id="display">0</div>
-  <button class="clear" id="clear">AC</button>
-  <button id="plusMinus">+/-</button>
-  <button class="operator" id="percent">%</button>
-  <button class="operator" id="divide">÷</button>
-  <button id="seven">7</button>
-  <button id="eight">8</button>
-  <button id="nine">9</button>
-  <button class="operator" id="multiply">×</button>
-  <button id="four">4</button>
-  <button id="five">5</button>
-  <button id="six">6</button>
-  <button class="operator" id="subtract">-</button>
-  <button id="one">1</button>
-  <button id="two">2</button>
-  <button id="three">3</button>
-  <button class="operator" id="add">+</button>
-  <button id="zero">0</button>
-  <button id="decimal">.</button>
-  <button class="operator" id="equals">=</button>
-  <button id="clearHistory" class="clear">ACH</button>
-  <div id="history"></div>
-</div>
+      <button onclick="appendNumber('7')">7</button>
+      <button onclick="appendNumber('8')">8</button>
+      <button onclick="appendNumber('9')">9</button>
+      <button class="operator" onclick="appendOperator('*')">x</button>
 
-<script>
-  let currentInput = '';
-  let operator = null;
-  let previousInput = '';
+      <button onclick="appendNumber('4')">4</button>
+      <button onclick="appendNumber('5')">5</button>
+      <button onclick="appendNumber('6')">6</button>
+      <button class="operator" onclick="appendOperator('-')">-</button>
 
-  const display = document.getElementById('display');
-  const historyContainer = document.getElementById('history');
+      <button onclick="appendNumber('1')">1</button>
+      <button onclick="appendNumber('2')">2</button>
+      <button onclick="appendNumber('3')">3</button>
+      <button class="operator" onclick="appendOperator('+')">+</button>
 
-  function updateDisplay() {
-    display.innerText = currentInput || '0';
-  }
+      <button onclick="appendNumber('0')" style="grid-column: span 2;">0</button>
+      <button onclick="appendNumber('.')">.</button>
+      <button class="operator" onclick="calculate()">=</button>
+    </div>
+    <div class="history" id="history">
+      <h2>Calculation History</h2>
+      <ul id="historyList"></ul>
+      <button onclick="clearHistory()">Clear History</button>
+    </div>
+  </div>
 
-  function clear() {
-    currentInput = '';
-    previousInput = '';
-    operator = null;
-    updateDisplay();
-  }
+  <script>
+    let currentInput = '0';
+    let previousInput = '';
+    let operation = null;
+    let history = loadHistory();
 
-  function appendNumber(number) {
-    if (currentInput.includes('.') && number === '.') return;
-    currentInput += number;
-    updateDisplay();
-  }
+    const display = document.getElementById('display');
+    const historyList = document.getElementById('historyList');
 
-  function chooseOperator(op) {
-    if (currentInput === '') return;
-    if (previousInput !== '') {
-      compute();
+    function updateDisplay() {
+      display.textContent = currentInput;
     }
-    operator = op;
-    previousInput = currentInput;
-    currentInput = '';
-  }
 
-  function compute() {
-    let computation;
-    const prev = parseFloat(previousInput);
-    const current = parseFloat(currentInput);
-    if (isNaN(prev) || isNaN(current)) return;
-
-    switch (operator) {
-      case '+':
-        computation = prev + current;
-        break;
-      case '-':
-        computation = prev - current;
-        break;
-      case '×':
-        computation = prev * current;
-        break;
-      case '÷':
-        computation = prev / current;
-        break;
-      case '%':
-        computation = prev % current;
-        break;
-      default:
-        return;
+    function appendNumber(number) {
+      if (currentInput === '0') {
+        currentInput = number;
+      } else {
+        currentInput += number;
+      }
+      updateDisplay();
     }
-    
-    saveToHistory(`${previousInput} ${operator} ${currentInput} = ${computation}`);
-    
-    currentInput = computation.toString();
-    operator = null;
-    previousInput = '';
-    updateDisplay();
-  }
 
-  function saveToHistory(entry) {
-    let history = JSON.parse(localStorage.getItem('calculatorHistory')) || [];
-    history.push(entry);
-    localStorage.setItem('calculatorHistory', JSON.stringify(history));
-    displayHistory();
-  }
-
-  function displayHistory() {
-    historyContainer.innerHTML = '';
-    let history = JSON.parse(localStorage.getItem('calculatorHistory')) || [];
-    history.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'history-item';
-      div.innerText = item;
-      historyContainer.appendChild(div);
-    });
-  }
-
-  function clearHistory() {
-    localStorage.removeItem('calculatorHistory');
-    historyContainer.innerHTML = '';
-  }
-
-  document.getElementById('clear').addEventListener('click', clear);
-  document.getElementById('clearHistory').addEventListener('click', clearHistory);
-  
-  document.querySelectorAll('.operator').forEach(button => {
-    button.addEventListener('click', () => chooseOperator(button.innerText));
-  });
-  document.querySelectorAll('button:not(.operator):not(#clear):not(#clearHistory)').forEach(button => {
-    button.addEventListener('click', () => appendNumber(button.innerText));
-  });
-  
-  document.getElementById('equals').addEventListener('click', compute);
-
-  displayHistory();
-  updateDisplay();
-
-  // Disable double-click zoom on mobile devices
-  let lastTouchEnd = 0;
-  document.addEventListener('touchend', function(event) {
-    const now = (new Date()).getTime();
-    if (now - lastTouchEnd <= 300) {
-      event.preventDefault();
+    function toggleSign() {
+      if (currentInput !== '0') {
+        currentInput = (parseFloat(currentInput) * -1).toString();
+        updateDisplay();
+      }
     }
-    lastTouchEnd = now;
-  });
-</script>
 
+    function appendOperator(op) {
+      if (operation !== null) {
+        calculate();
+      }
+      operation = op;
+      previousInput = currentInput;
+      currentInput = '0';
+    }
+
+    function calculate() {
+      let result;
+      const num1 = parseFloat(previousInput);
+      const num2 = parseFloat(currentInput);
+
+      switch (operation) {
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2;
+          break;
+        case '*':
+          result = num1 * num2;
+          break;
+        case '/':
+          result = num1 / num2;
+          break;
+        case '%':
+          result = num1 % num2;
+          break;
+      }
+
+      currentInput = result.toString();
+      updateDisplay();
+      saveHistory(previousInput, operation, currentInput);
+      operation = null; // Reset the operation after calculation
+    }
+
+    function clearDisplay() {
+      currentInput = '0';
+      previousInput = '';
+      operation = null;
+      updateDisplay();
+    }
+
+    function saveHistory(num1, op, num2) {
+      const historyItem = `${num1} ${op} ${num2} = ${currentInput}`;
+      history.push(historyItem);
+      localStorage.setItem('history', JSON.stringify(history));
+      updateHistoryList();
+    }
+
+    function loadHistory() {
+      const storedHistory = localStorage.getItem('history');
+      return storedHistory ? JSON.parse(storedHistory) : [];
+    }
+
+    function updateHistoryList() {
+      historyList.innerHTML = '';
+      history.forEach((item) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        historyList.appendChild(listItem);
+      });
+    }
+
+    function clearHistory() {
+      history = [];
+      localStorage.removeItem('history');
+      updateHistoryList();
+    }
+  </script>
 </body>
 </html>

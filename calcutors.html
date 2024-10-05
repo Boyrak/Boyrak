@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator with History</title>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #222;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #111;
+}
+
+button {
+  padding: 20px;
+  font-size: 24px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+button:active {
+  background-color: #777;
+}
+
+.operator {
+  background-color: orange;
+  color: white;
+}
+
+.clear {
+  grid-column: span 2;
+}
+
+#display {
+  grid-column: span 4;
+  padding: 20px;
+  font-size: 36px;
+  color: white;
+  background-color: #333;
+  text-align: right;
+  border-radius: 5px;
+}
+
+#history {
+  grid-column: span 4;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #444;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.history-item {
+  padding: 5px 0;
+}
+
+#clearHistory {
+  grid-column: span ;
+  background-color: #444;
+}
+</style>
+</head>
+<body>
+
+<div class="calculator">
+  <div id="display">0</div>
+  <button class="clear" id="clear">AC</button>
+  <button id="plusMinus">+/-</button>
+  <button class="operator" id="percent">%</button>
+  <button class="operator" id="divide">÷</button>
+  <button id="seven">7</button>
+  <button id="eight">8</button>
+  <button id="nine">9</button>
+  <button class="operator" id="multiply">×</button>
+  <button id="four">4</button>
+  <button id="five">5</button>
+  <button id="six">6</button>
+  <button class="operator" id="subtract">-</button>
+  <button id="one">1</button>
+  <button id="two">2</button>
+  <button id="three">3</button>
+  <button class="operator" id="add">+</button>
+  <button id="zero">0</button>
+  <button id="decimal">.</button>
+  <button class="operator" id="equals">=</button>
+  <button id="clearHistory" class="clear">ACH</button>
+  <div id="history"></div>
+</div>
+
+<script>
+  let currentInput = '';
+  let operator = null;
+  let previousInput = '';
+
+  const display = document.getElementById('display');
+  const historyContainer = document.getElementById('history');
+
+  function updateDisplay() {
+    display.innerText = currentInput || '0';
+  }
+
+  function clear() {
+    currentInput = '';
+    previousInput = '';
+    operator = null;
+    updateDisplay();
+  }
+
+  function appendNumber(number) {
+    if (currentInput.includes('.') && number === '.') return;
+    currentInput += number;
+    updateDisplay();
+  }
+
+  function chooseOperator(op) {
+    if (currentInput === '') return;
+    if (previousInput !== '') {
+      compute();
+    }
+    operator = op;
+    previousInput = currentInput;
+    currentInput = '';
+  }
+
+  function compute() {
+    let computation;
+    const prev = parseFloat(previousInput);
+    const current = parseFloat(currentInput);
+    if (isNaN(prev) || isNaN(current)) return;
+    
+    switch (operator) {
+      case '+':
+        computation = prev + current;
+        break;
+      case '-':
+        computation = prev - current;
+        break;
+      case '×':
+        computation = prev * current;
+        break;
+      case '÷':
+        computation = prev / current;
+        break;
+      case '%':
+        computation = prev % current;
+        break;
+      default:
+        return;
+    }
+    
+    // Save the calculation to history
+    saveToHistory(`${previousInput} ${operator} ${currentInput} = ${computation}`);
+    
+    currentInput = computation.toString();
+    operator = null;
+    previousInput = '';
+    updateDisplay();
+  }
+
+  function saveToHistory(entry) {
+    // Save history to local storage
+    let history = JSON.parse(localStorage.getItem('calculatorHistory')) || [];
+    history.push(entry);
+    localStorage.setItem('calculatorHistory', JSON.stringify(history));
+    displayHistory();
+  }
+
+  function displayHistory() {
+    historyContainer.innerHTML = ''; // Clear existing history
+    let history = JSON.parse(localStorage.getItem('calculatorHistory')) || [];
+    history.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'history-item';
+      div.innerText = item;
+      historyContainer.appendChild(div);
+    });
+  }
+
+  function clearHistory() {
+    localStorage.removeItem('calculatorHistory'); // Clear local storage
+    historyContainer.innerHTML = ''; // Clear displayed history
+  }
+
+  document.getElementById('clear').addEventListener('click', clear);
+  document.getElementById('clearHistory').addEventListener('click', clearHistory);
+  
+  document.querySelectorAll('.operator').forEach(button => {
+    button.addEventListener('click', () => chooseOperator(button.innerText));
+  });
+  document.querySelectorAll('button:not(.operator):not(#clear):not(#clearHistory)').forEach(button => {
+    button.addEventListener('click', () => appendNumber(button.innerText));
+  });
+  
+  document.getElementById('equals').addEventListener('click', compute);
+
+  // Display history on load
+  displayHistory();
+  
+  updateDisplay();
+</script>
+
+</body>
+</html>

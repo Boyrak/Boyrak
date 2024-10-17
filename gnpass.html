@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Password Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            width: 80%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #password {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #copyButton {
+            display: none;
+            background-color: #008CBA;
+        }
+        #copyButton:hover {
+            background-color: #007B9A;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Password Generator</h1>
+        <input type="number" id="length" min="8" max="32" value="12" placeholder="Password Length">
+        <br>
+        <label><input type="checkbox" id="lowercase" checked> Lowercase Letters</label><br>
+        <label><input type="checkbox" id="uppercase" checked> Uppercase Letters</label><br>
+        <label><input type="checkbox" id="numbers" checked> Numbers</label><br>
+        <label><input type="checkbox" id="special" checked> Special Characters</label><br>
+        <button onclick="generatePassword()">Generate Password</button>
+        <br>
+        <input type="text" id="password" readonly>
+        <br>
+        <button id="copyButton" onclick="copyPassword()">Copy Password</button>
+    </div>
+    
+    <script>
+        function generatePassword() {
+            const length = document.getElementById("length").value;
+            const charset = {
+                lowercase: "abcdefghijklmnopqrstuvwxyz",
+                uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                numbers: "0123456789",
+                special: "!@#$%^&*()_+[]{}|;:,.<>?"
+            };
+            let selectedCharset = "";
+
+            // Check which character sets are selected
+            if (document.getElementById("lowercase").checked) {
+                selectedCharset += charset.lowercase;
+            }
+            if (document.getElementById("uppercase").checked) {
+                selectedCharset += charset.uppercase;
+            }
+            if (document.getElementById("numbers").checked) {
+                selectedCharset += charset.numbers;
+            }
+            if (document.getElementById("special").checked) {
+                selectedCharset += charset.special;
+            }
+
+            // Generate password if at least one character set is selected
+            if (selectedCharset.length > 0) {
+                let password = "";
+                for (let i = 0; i < length; i++) {
+                    const randomIndex = Math.floor(Math.random() * selectedCharset.length);
+                    password += selectedCharset[randomIndex];
+                }
+                document.getElementById("password").value = password;
+                document.getElementById("copyButton").style.display = "inline-block";
+            } else {
+                alert("Please select at least one character type.");
+            }
+        }
+
+        function copyPassword() {
+            const passwordField = document.getElementById("password");
+            passwordField.select();
+            passwordField.setSelectionRange(0, 99999); // For mobile devices
+            document.execCommand("copy");
+            alert("Password copied to clipboard!");
+        }
+    </script>
+</body>
+</html>

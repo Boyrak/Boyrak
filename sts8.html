@@ -1,0 +1,1165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <title>RAK</title>
+    <link rel="icon" type="image/png" href="https://www.sachcharak.com/RAK.PNG">
+    <link rel="apple-touch-icon" href="https://www.sachcharak.com/RAK.PNG">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .alert, .telegram-btn, #status {
+    font-family: 'Battambang', Arial, sans-serif;
+}
+      .package__feature_list li {
+    font-family: 'Battambang', Arial, sans-serif;
+    font-weight: 400;
+    /* Add any other styles you want for the list items */
+}
+
+.package__feature_list input {
+    font-family: 'Battambang', Arial, sans-serif;
+    font-weight: 400;
+    /* Add any other styles you want for the input fields */
+}
+
+/* If you want to apply the font to all text in this section */
+.bottom {
+    font-family: 'Battambang', Arial, sans-serif;
+}
+    </style>
+<style>
+    /* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 0.5rem;
+    pointer-events: none;
+    max-width: 500px;
+    margin: 1.75rem auto;
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 0.3rem;
+    outline: 0;
+}
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+}
+
+.modal-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 1.25rem;
+}
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+.modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: calc(0.3rem - 1px);
+    border-bottom-left-radius: calc(0.3rem - 1px);
+}
+
+.btn-close {
+    padding: 0.5rem;
+    margin: -0.5rem -0.5rem -0.5rem auto;
+    background: transparent;
+    border: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.fade {
+    transition: opacity 0.15s linear;
+}
+
+.fade:not(.show) {
+    opacity: 0;
+}
+
+/* Video container styles */
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.embed-responsive::before {
+    display: block;
+    content: "";
+}
+
+.embed-responsive-4by3::before {
+    padding-top: 75%;
+}
+
+.embed-responsive .embed-responsive-item,
+.embed-responsive iframe,
+.embed-responsive embed,
+.embed-responsive object,
+.embed-responsive video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Card styles */
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.rounded-4 {
+    border-radius: 0.5rem;
+}
+</style>
+    <style>
+      body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    height: 100%;
+    background: rgb(255, 255, 255) url("https://www.sachcharak.com/bg/Backgroud.png") no-repeat;
+    background-size: cover;
+}
+
+.button {
+    display: inline-block;
+    width: 170px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #367cd8;
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+:root {
+    --main-color: rgb(218, 3, 87);
+}
+
+.center {
+    text-align: center;
+}
+
+/* Style for startDate */
+#startDate {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Style for expirationDate */
+#expirationDate {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Style for expirationTime */
+#expirationTime {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f2f2f2;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+
+.closebtn {
+    color: black;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.closebtn:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.telegram-btn {
+    background-color: #0088cc;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.telegram-btn:hover {
+    background-color: #005580;
+}
+
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container for the date and time inputs */
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields styling */
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Input fields focus effect */
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Status message styling */
+#status {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Expired status color */
+#status.expired {
+    color: red;
+}
+
+/* Active status color */
+#status.active {
+    color: green;
+}
+
+/* Button styles (if you have any buttons) */
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+    </style>
+    <style>
+        /* Header Mobile Styles */
+.container__header__mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo .image {
+    max-height: 50px;
+    margin: 10px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+     border-radius: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link img {
+    width: 30px;
+    height: auto;
+}
+
+/* Dropdown Menu Styles */
+.dropdown__button__bi {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    display: none;
+    border-radius: 4px;
+    padding: 8px 0;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.list__item__button a {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+.list__item__button a:hover {
+    background-color: #f5f5f5;
+}
+
+/* News Section Styles */
+.container__isiphonews {
+    margin-top: 100px;
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+}
+
+.container__isiphonews .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.news-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    mask: url('path-to-news-icon.svg') no-repeat center;
+    -webkit-mask: url('path-to-news-icon.svg') no-repeat center;
+}
+
+.isisphonews__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    
+}
+
+.isisphonews__list li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+}
+
+/* Breadcrumb Styles */
+.isipho__breadcrumb {
+    padding: 10px 20px;
+    background-color: #f8f9fa;
+     border-radius: 15px;
+}
+
+.isipho__breadcrumb .link {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+}
+
+.isipho__breadcrumb .link.active {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Divider Text Styles */
+.divider__text {
+    text-align: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.divider__text::before,
+.divider__text::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.divider__text::before {
+    left: 0;
+}
+
+.divider__text::after {
+    right: 0;
+}
+
+.divider__text span {
+    background-color: white;
+    padding: 0 15px;
+    color: #666;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container__header__mobile {
+        padding: 5px 10px;
+    }
+    
+    .divider__text::before,
+    .divider__text::after {
+        width: 35%;
+    }
+}
+
+/* Bootstrap Icon Overrides */
+.bi {
+    font-size: 1.2rem;
+}
+
+.bi-shop, .bi-apple {
+    color: #333;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.navbar-toggler.collapsed {
+    background-color: transparent;
+}
+    </style>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+<header id="headerMobile" class="container__header__mobile">
+    <a href="">
+        <div class="logo">
+            <img class="image" style="margin:10px;border-radius:10px;margin-top:40px;" src="https://www.sachcharak.com/RAK.PNG" alt="">
+        </div>
+    </a>
+
+    <div class="wrapper">
+        <a class="nav-link" href="#" rel="" id="changeLang" role="button">
+            <img src="https://www.sachcharak.com/image/Flag_of_Cambodia.png" title=" " width="30" />
+        </a>
+        <div class="profile">
+            <div class="menu navbar-toggler collapsed">
+                <button type="button" class="btn dropdown__button__bi bi-shop p-1  dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false"></button>
+                <ul class="dropdown-menu dropdown__window dropdown-menu-end">
+                    <li class="list__item__button"><a href="https://t.me/RcSrAk" class="dropdown-item"><i class="bi bi-telegram p-1"></i> Start Plan</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu navbar-toggler">
+            <button class="bi bi-apple p-1"></button>
+        </div>
+    </div>
+</header>
+<style>
+    
+</style>
+<section class="container__isiphonews">
+    <div class="wrapper"> 
+      
+        
+            <marquee width="100%" height="100%" behavior="scroll" direction="left">
+                <ul class="isisphonews__list">
+                     <li><a href="https://t.me/RcSrAk" target="_blank">CUSTOMER SUPPORT<i data-scarlab="chevron-right"></i></a></li>
+                </ul>
+            </marquee>
+      
+    </div>
+</section>
+<style>
+    .isipho__breadcrumb {
+    padding: 10px 0;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    border-radius: 15px;
+}
+
+.isipho__breadcrumb .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.isipho__breadcrumb .link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #367cd8;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.isipho__breadcrumb .link:hover {
+    background-color: #2861b1;
+    transform: translateY(-2px);
+}
+
+.isipho__breadcrumb .link.active {
+    background-color: #000000;
+}
+
+.isipho__breadcrumb .link::before {
+    content: '←';
+    margin-right: 5px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .isipho__breadcrumb .link {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+</style>
+
+<style>
+    /* First make sure to import the Battambang font */
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&display=swap');
+
+/* Apply the font to the specific elements */
+.top__badge span {
+    font-family: 'Battambang', Arial, sans-serif;
+    font-weight: 700; /* Bold */
+}
+
+.package__hero {
+    font-family: 'Battambang', Arial, sans-serif;
+    font-weight: 700; /* Bold */
+}
+
+.price__wrapper .period {
+    font-family: 'Battambang', Arial, sans-serif;
+    font-weight: 400; /* Regular */
+}
+
+/* You can also add additional styling */
+.top__badge span {
+    font-size: 16px;
+}
+
+.package__hero {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.price__wrapper .period {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* For better text rendering in Khmer */
+.top__badge span,
+.package__hero,
+.price__wrapper .period {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+</style>
+
+<style>
+    .watch {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #f0f0f0;
+      border: 3px solid #333;
+      position: relative;
+    }
+    
+    .watch-face {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    
+    .hand {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform-origin: 50% 100%;
+      background-color: #333;
+    }
+    
+    .hour-hand {
+      width: 2px;
+      height: 12px;
+      transform: translateX(-50%) rotate(0deg);
+    }
+    
+    .minute-hand {
+      width: 1px;
+      height: 15px;
+      transform: translateX(-50%) rotate(45deg);
+    }
+    
+    .second-hand {
+      width: 1px;
+      height: 18px;
+      background-color: red;
+      transform: translateX(-50%) rotate(180deg);
+    }
+    
+    .center-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background-color: #333;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    </style>
+<section class="container__availablepackages">
+    <article class="package__basic">
+        <div class="top__badge">
+            <span>ពិនិត្យ 72 ម៉ោង</span>
+        </div>
+       <div class="top">
+            <div class="package__hero">ពិនិត្យ 72 ម៉ោង</div>
+            <div class="price__wrapper">
+                <div class="period">ជ្រេីសរេីស ថ្ងៃ & ម៉ោង ដែល
+
+យេីងទិញនៅខាងក្រោម ។ ខ្ញុំនឹង Auto គិតពេលណាគ្រប់ 72 ម៉ោងអោយនៅខាងក្រោម</div>
+            </div>
+        </div>  
+        <div class="bottom">
+            <ul class="custom-list package__feature_list">
+                <li>ជ្រេីសរេីសថ្ងៃ & ម៉ោងដែលយេីងទិញ</li>
+                <div>
+                    <input type="datetime-local" id="startDate" onchange="calculateExpirationDate()">
+                    <div  id="khmerDateTime" style="margin-top: 5px; color: #666;"></div>
+                </div>
+                <br>
+                
+                <div class="watch">
+                    <div class="watch-face">
+                      <div class="hand hour-hand"></div>
+                      <div class="hand minute-hand"></div>
+                      <div class="hand second-hand"></div>
+                      <div class="center-dot"></div>
+                    </div>
+                  </div>
+                  <br>
+                <li>គ្រប់ 72 ម៉ោងនៅ</li>
+                <div type="date" id="expirationDate" onchange="translateToKhmer(this.value)">
+                    <div id="khmerDate" style="margin-top: 5px; color: #666;"></div>
+                </div>
+              <!--    <br>
+               <li>ម៉ោង</li>
+<div>
+    <input type="text" id="expirationTime" readonly style="width: 200px;">
+</div>-->
+            </ul>
+            <br>
+        </div>
+    </article>
+</section>
+
+<!-- JavaScript imports -->
+
+<style>
+    /* Breadcrumb Section */
+.isipho__breadcrumb {
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    margin-bottom: 20px;
+}
+
+.isipho__breadcrumb .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.isipho__breadcrumb .link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.isipho__breadcrumb .link.active {
+    color: #007bff;
+}
+
+/* Divider Text */
+.divider__text {
+    text-align: center;
+    position: relative;
+    margin: 30px 0;
+}
+
+.divider__text span {
+    background-color: #fff;
+    padding: 0 15px;
+    color: #333;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.divider__text:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #ddd;
+    z-index: 1;
+}
+
+/* Available Packages Section */
+.container__availablepackages {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.package__basic {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.top__badge {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    transform: rotate(45deg);
+    width: 150px;
+    text-align: center;
+}
+
+.top {
+    padding: 30px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.package__hero {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.price__wrapper {
+    margin: 15px 0;
+}
+
+.period {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.button__tutorial {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button__tutorial:hover {
+    background-color: #0056b3;
+}
+
+/* Bottom Section */
+.bottom {
+    padding: 20px;
+}
+
+.package__feature_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.package__feature_list li {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Input Styles */
+input[type="datetime-local"],
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+/* Divider Left */
+.divider_left {
+    position: relative;
+    height: 30px;
+    margin: 15px 0;
+}
+
+.left__diamond__arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    transform: rotate(45deg);
+}
+
+/* Modal Styles */
+.modal-dialog {
+    max-width: 600px;
+    margin: 1.75rem auto;
+}
+
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    padding: 1rem;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.modal-body {
+    padding: 1rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 1rem;
+}
+
+.btn-close {
+    padding: 1rem;
+    background: transparent;
+    border: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container__availablepackages {
+        padding: 10px;
+    }
+
+    .top__badge {
+        font-size: 0.9rem;
+        right: -40px;
+    }
+
+    .package__hero {
+        font-size: 1.3rem;
+    }
+
+    .button__tutorial {
+        width: 90%;
+    }
+
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+}
+</style>
+<style>
+   .alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f2f2f2;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+
+.closebtn {
+    color: black;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.closebtn:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.telegram-btn {
+    background-color: #0088cc;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.telegram-btn:hover {
+    background-color: #005580;
+}
+
+</style>
+
+
+<style>
+    /* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container for the date and time inputs */
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields styling */
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Input fields focus effect */
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Status message styling */
+#status {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Expired status color */
+#status.expired {
+    color: red;
+}
+
+/* Active status color */
+#status.active {
+    color: green;
+}
+
+/* Button styles (if you have any buttons) */
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+
+
+
+<script src="/datetime7.js">
+    
+</script>
+</body>
+</html>

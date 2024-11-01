@@ -776,7 +776,7 @@ button:hover {
             <ul class="custom-list package__feature_list">
                 <li>ជ្រើសរើសថ្ងៃ & ម៉ោងដែលយើងទិញ</li>
                 <div>
-                    <input type="datetime-local" id="startDate" onchange="calculateExpirationDate()">
+                    <input type="datetime-local" id="startDate" style="margin-top: 5px; color: #666;" onchange="calculateExpirationDate()">
                     <div  id="khmerDateTime" style="margin-top: 5px; color: #666;"></div>
                 </div>
                 <br>
@@ -790,15 +790,16 @@ button:hover {
                     </div>
                   </div>
                   <br>
-                <li>គ្រប់ 72 ម៉ោងនៅ</li>
-                <div type="date" id="expirationDate" onchange="translateToKhmer(this.value)">
+                
+                <li>គ្រប់ 72 ម៉ោងនៅ</li>  
+                <div type="date" id="expirationDate" style onchange="translateToKhmer(this.value)">
                     <div id="khmerDate" style="margin-top: 5px; color: #666;"></div>
+               
+                
+                  <div>
+                    <input type="text" id="expirationTime" style="margin-top: 5px; color: #666;">
                 </div>
-              <!--    <br>
-               <li>ម៉ោង</li>
-<div>
-    <input type="text" id="expirationTime" readonly style="width: 200px;">
-</div>-->
+
             </ul>
             <br>
         </div>

@@ -117,47 +117,27 @@ function link2() {
         h5gg.searchNumber("4100", "F32", "0x100000000", "0x200000000");
         h5gg.editAll("1300", "F32");
 
-        var message = "Ready....to Plus & Minus";
-                  
-        var alertBox = document.createElement('div');
-        alertBox.className = 'alert';
-        
-        // Create the close button
-        var closeButton = document.createElement('span');
-        closeButton.className = 'closebtn';
-        closeButton.innerHTML = '&times;';
-        closeButton.onclick = function() {
-        alertBox.style.display = 'none';
-        };
-        
-        // Create the message
-        var messageNode = document.createElement('strong');
-        messageNode.innerHTML = message + ' ';
-        
-        // Create the Telegram button
-        
-        
-        
-        
-        // Append elements to the alert box
-        alertBox.appendChild(closeButton);
-        alertBox.appendChild(messageNode);
-        
-        
-        // Append the alert box to the body
-        document.body.appendChild(alertBox);
-        
-        // Center the alert box
-        alertBox.style.position = 'fixed';
-        alertBox.style.top = '50%';
-        alertBox.style.left = '50%';
-        alertBox.style.transform = 'translate(-50%, -50%)';
+         // Show success alert
+         showSuccessAlert();
 
         // Once the gl function is finished, remove the loading alert
         removeLoadingAlert();
     }, 2000); // 2000 milliseconds = 2 seconds
 }
+function showSuccessAlert() {
+    // Create success alert element
+    var successAlert = document.createElement('div');
+    successAlert.className = 'success-alert';
+    successAlert.innerHTML = 'Success! Operations completed.';
 
+    // Append the success alert to the body
+    document.body.appendChild(successAlert);
+
+    // Remove the alert after a certain time
+    setTimeout(function() {
+        successAlert.remove();
+    }, 3000); // Removes the alert after 3 seconds
+}
 function removeLoadingAlert() {
     var alerts = document.getElementsByClassName('alert');
     while (alerts.length > 0) {
@@ -180,7 +160,16 @@ function addStyles() {
             animation: fadeIn 0.5s;
         }
 
+        .success {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
 
+        .show {
+            display: block;
+            opacity: 1;
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -195,6 +184,26 @@ function addStyles() {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+            .success-alert {
+        background-color: rgba(0, 128, 0, 0.9); /* Dark green background */
+        color: white; /* White text color */
+        padding: 15px; /* Padding around the text */
+        border-radius: 5px; /* Rounded corners */
+        position: fixed; /* Fixed position */
+        top: 20px; /* Distance from the top */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Adjust for centering */
+        z-index: 1000; /* Ensure it appears above other elements */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+        animation: fadeIn 0.5s, fadeOut 0.5s 2.5s; /* Fade in and out animation */
+    }
+
+
+    /* Fade out animation */
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
     `;
 
     const styleSheet = document.createElement("style");

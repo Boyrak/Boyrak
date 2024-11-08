@@ -190,9 +190,9 @@ function addStyles() {
         padding: 15px; /* Padding around the text */
         border-radius: 5px; /* Rounded corners */
         position: fixed; /* Fixed position */
-        top: 20px; /* Distance from the top */
+        top: 50%; /* Center vertically */
         left: 50%; /* Center horizontally */
-        transform: translateX(-50%); /* Adjust for centering */
+        transform: translate(-50%, -50%); /* Adjust for centering */
         z-index: 1000; /* Ensure it appears above other elements */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
         animation: fadeIn 0.5s, fadeOut 0.5s 2.5s; /* Fade in and out animation */

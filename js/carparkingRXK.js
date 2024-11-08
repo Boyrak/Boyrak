@@ -57,90 +57,7 @@ function link2() {
     h5gg.searchNumber("0.5", "F32", "0x100000000", "0x200000000");
     h5gg.editAll("9.999999E-32", "F32");
   }
-  function gl() {
-    var message = "loading...to Plus & Minus";
-                  
-                  var alertBox = document.createElement('div');
-                  alertBox.className = 'alert';
-                  
-                  // Create the close button
-                  var closeButton = document.createElement('span');
-                  closeButton.className = 'closebtn';
-                  closeButton.innerHTML = '&times;';
-                  closeButton.onclick = function() {
-                  alertBox.style.display = 'none';
-                  };
-                  
-                  // Create the message
-                  var messageNode = document.createElement('strong');
-                  messageNode.innerHTML = message + ' ';
-                  
-                  // Create the Telegram button
-                  
-                  
-                  
-                  
-                  // Append elements to the alert box
-                  alertBox.appendChild(closeButton);
-                  alertBox.appendChild(messageNode);
-                  
-                  
-                  // Append the alert box to the body
-                  document.body.appendChild(alertBox);
-                  
-                  // Center the alert box
-                  alertBox.style.position = 'fixed';
-                  alertBox.style.top = '50%';
-                  alertBox.style.left = '50%';
-                  alertBox.style.transform = 'translate(-50%, -50%)';
-    h5gg.clearResults();
-    h5gg.searchNumber("150", "F32", "0x100000000", "0x200000000");
-    h5gg.editAll("1695", "F32");
-    h5gg.clearResults();
-    h5gg.searchNumber("220", "F32", "0x100000000", "0x200000000");
-    h5gg.editAll("2000", "F32");
-    h5gg.clearResults();
-    h5gg.searchNumber("5900", "F32", "0x100000000", "0x200000000");
-    h5gg.editAll("1111", "F32");
-    h5gg.clearResults();
-    h5gg.searchNumber("4100", "F32", "0x100000000", "0x200000000");
-    h5gg.editAll("1300", "F32");
-    var message = "Ready....to Plus & Minus";
-                  
-                  var alertBox = document.createElement('div');
-                  alertBox.className = 'alert';
-                  
-                  // Create the close button
-                  var closeButton = document.createElement('span');
-                  closeButton.className = 'closebtn';
-                  closeButton.innerHTML = '&times;';
-                  closeButton.onclick = function() {
-                  alertBox.style.display = 'none';
-                  };
-                  
-                  // Create the message
-                  var messageNode = document.createElement('strong');
-                  messageNode.innerHTML = message + ' ';
-                  
-                  // Create the Telegram button
-                  
-                  
-                  
-                  
-                  // Append elements to the alert box
-                  alertBox.appendChild(closeButton);
-                  alertBox.appendChild(messageNode);
-                  
-                  
-                  // Append the alert box to the body
-                  document.body.appendChild(alertBox);
-                  
-                  // Center the alert box
-                  alertBox.style.position = 'fixed';
-                  alertBox.style.top = '50%';
-                  alertBox.style.left = '50%';
-                  alertBox.style.transform = 'translate(-50%, -50%)';
-  }
+
   function glll() {
     if (remember.checked == 0x1) {
       h5gg.clearResults();
@@ -154,6 +71,152 @@ function link2() {
       h5gg.clearResults();
     }
   }
+
+ // Function to create and show the loading spinner
+ function createLoadingSpinner() {
+    const loadingSpinner = document.createElement('div');
+    loadingSpinner.id = 'loadingSpinner';
+    loadingSpinner.className = 'loading-spinner';
+    loadingSpinner.style.display = 'flex';
+
+    const spinnerDiv = document.createElement('div');
+    spinnerDiv.className = 'spinner';
+
+    const loadingText = document.createElement('p');
+    loadingText.textContent = 'Loading... Please wait.';
+
+    loadingSpinner.appendChild(spinnerDiv);
+    loadingSpinner.appendChild(loadingText);
+
+    document.body.appendChild(loadingSpinner);
+}
+
+// Function to remove the loading spinner
+function removeLoadingSpinner() {
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    if (loadingSpinner) {
+        document.body.removeChild(loadingSpinner);
+    }
+}
+
+function gl(callback) {
+    // Simulate some processing time with a timeout
+    setTimeout(function() {
+        console.log("gl() function has finished executing.");
+        
+h5gg.clearResults();
+h5gg.searchNumber("150", "F32", "0x100000000", "0x200000000");
+h5gg.editAll("1695", "F32");
+h5gg.clearResults();
+h5gg.searchNumber("220", "F32", "0x100000000", "0x200000000");
+h5gg.editAll("2000", "F32");
+h5gg.clearResults();
+h5gg.searchNumber("5900", "F32", "0x100000000", "0x200000000");
+h5gg.editAll("1111", "F32");
+h5gg.clearResults();
+h5gg.searchNumber("4100", "F32", "0x100000000", "0x200000000");
+h5gg.editAll("1300", "F32");
+
+var message = "Ready....to Plus & Minus";
+          
+var alertBox = document.createElement('div');
+alertBox.className = 'alert';
+
+// Create the close button
+var closeButton = document.createElement('span');
+closeButton.className = 'closebtn';
+closeButton.innerHTML = '&times;';
+closeButton.onclick = function() {
+alertBox.style.display = 'none';
+};
+
+// Create the message
+var messageNode = document.createElement('strong');
+messageNode.innerHTML = message + ' ';
+
+// Create the Telegram button
+
+
+
+
+// Append elements to the alert box
+alertBox.appendChild(closeButton);
+alertBox.appendChild(messageNode);
+
+
+// Append the alert box to the body
+document.body.appendChild(alertBox);
+
+// Center the alert box
+alertBox.style.position = 'fixed';
+alertBox.style.top = '50%';
+alertBox.style.left = '50%';
+alertBox.style.transform = 'translate(-50%, -50%)';
+
+        // Call the callback function to hide the loading spinner
+        if (callback) callback();
+    }, 2000); // Simulated execution time (2 seconds)
+}
+
+function showLoadingAndRunGl() {
+    // Create and show loading spinner
+    createLoadingSpinner();
+
+    // Call the gl() function and pass a callback to hide the spinner
+    gl(function() {
+        // Hide the loading spinner after gl() finishes
+        removeLoadingSpinner();
+    });
+}
+
+
+
+
+
+
+// Create a style element
+const style = document.createElement('style');
+
+// Set the CSS styles as text content
+style.textContent = `
+.loading-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #efefef;
+  color: rgb(141, 102, 50);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.097);
+  z-index: 9999;
+  width: 300px;
+  height: auto;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.spinner {
+  border: 8px solid rgba(65, 65, 65, 0.3);
+  border-top: 8px solid rgb(80, 80, 80);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+`;
+
+// Append the style element to the head
+document.head.appendChild(style);
+
+
+
+
 function showAlert(message) {
     var alertBox = document.createElement('div');
     alertBox.className = 'alert3';

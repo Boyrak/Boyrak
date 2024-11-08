@@ -75,8 +75,7 @@ function link2() {
 
 
 
-  
-function gl() {
+  function gl() {
     // Create loading alert
     var loadingAlert = document.createElement('div');
     loadingAlert.className = 'alert';
@@ -117,6 +116,9 @@ function gl() {
         h5gg.clearResults();
         h5gg.searchNumber("4100", "F32", "0x100000000", "0x200000000");
         h5gg.editAll("1300", "F32");
+
+        // Show success alert
+        alert("Success! Operations completed.");
 
         // Once the gl function is finished, remove the loading alert
         removeLoadingAlert();

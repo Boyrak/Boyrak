@@ -71,148 +71,113 @@ function link2() {
       h5gg.clearResults();
     }
   }
-
- // Function to create and show the loading spinner
- function createLoadingSpinner() {
-    const loadingSpinner = document.createElement('div');
-    loadingSpinner.id = 'loadingSpinner';
-    loadingSpinner.className = 'loading-spinner';
-    loadingSpinner.style.display = 'flex';
-
-    const spinnerDiv = document.createElement('div');
-    spinnerDiv.className = 'spinner';
-
-    const loadingText = document.createElement('p');
-    loadingText.textContent = 'Loading... Please wait.';
-
-    loadingSpinner.appendChild(spinnerDiv);
-    loadingSpinner.appendChild(loadingText);
-
-    document.body.appendChild(loadingSpinner);
+  function gl() {
+    showLoadingAlert();
+    gl2();
 }
 
-// Function to remove the loading spinner
-function removeLoadingSpinner() {
-    const loadingSpinner = document.getElementById('loadingSpinner');
-    if (loadingSpinner) {
-        document.body.removeChild(loadingSpinner);
+function showLoadingAlert() {
+    var loadingAlert = document.createElement('div');
+    loadingAlert.className = 'alert';
+
+    // Create loading animation
+    var loadingSpinner = document.createElement('div');
+    loadingSpinner.className = 'loading';
+    loadingSpinner.innerHTML = '🔄'; // You can replace this with a spinner graphic if desired
+
+    // Create loading message
+    var loadingMessage = document.createElement('strong');
+    loadingMessage.innerHTML = 'Loading...';
+
+    // Append elements to the loading alert
+    loadingAlert.appendChild(loadingSpinner);
+    loadingAlert.appendChild(loadingMessage);
+
+    // Append the loading alert to the body
+    document.body.appendChild(loadingAlert);
+
+    // Center the loading alert
+    loadingAlert.style.position = 'fixed';
+    loadingAlert.style.top = '50%';
+    loadingAlert.style.left = '50%';
+    loadingAlert.style.transform = 'translate(-50%, -50%)';
+}
+
+function gl2() {
+    h5gg.clearResults();
+    h5gg.searchNumber("150", "F32", "0x100000000", "0x200000000");
+    h5gg.editAll("1695", "F32");
+    h5gg.clearResults();
+    h5gg.searchNumber("220", "F32", "0x100000000", "0x200000000");
+    h5gg.editAll("2000", "F32");
+    h5gg.clearResults();
+    h5gg.searchNumber("5900", "F32", "0x100000000", "0x200000000");
+    h5gg.editAll("1111", "F32");
+    h5gg.clearResults();
+    h5gg.searchNumber("4100", "F32", "0x100000000", "0x200000000");
+    h5gg.editAll("1300", "F32");
+
+    // Once the gl function is finished, remove the loading alert
+    removeLoadingAlert();
+}
+
+function removeLoadingAlert() {
+    var alerts = document.getElementsByClassName('alert');
+    while (alerts.length > 0) {
+        alerts[0].parentNode.removeChild(alerts[0]);
     }
 }
 
-function gl(callback) {
-    // Simulate some processing time with a timeout
-    setTimeout(function() {
-        console.log("gl() function has finished executing.");
-        
-h5gg.clearResults();
-h5gg.searchNumber("150", "F32", "0x100000000", "0x200000000");
-h5gg.editAll("1695", "F32");
-h5gg.clearResults();
-h5gg.searchNumber("220", "F32", "0x100000000", "0x200000000");
-h5gg.editAll("2000", "F32");
-h5gg.clearResults();
-h5gg.searchNumber("5900", "F32", "0x100000000", "0x200000000");
-h5gg.editAll("1111", "F32");
-h5gg.clearResults();
-h5gg.searchNumber("4100", "F32", "0x100000000", "0x200000000");
-h5gg.editAll("1300", "F32");
-
-var message = "Ready....to Plus & Minus";
-          
-var alertBox = document.createElement('div');
-alertBox.className = 'alert';
-
-// Create the close button
-var closeButton = document.createElement('span');
-closeButton.className = 'closebtn';
-closeButton.innerHTML = '&times;';
-closeButton.onclick = function() {
-alertBox.style.display = 'none';
-};
-
-// Create the message
-var messageNode = document.createElement('strong');
-messageNode.innerHTML = message + ' ';
-
-// Create the Telegram button
 
 
 
+function addStyles() {
+    const styles = `
+        .alert {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.5s;
+        }
 
-// Append elements to the alert box
-alertBox.appendChild(closeButton);
-alertBox.appendChild(messageNode);
+        .closebtn {
+            margin-left: 15px;
+            cursor: pointer;
+        }
 
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-// Append the alert box to the body
-document.body.appendChild(alertBox);
+        .loading {
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
 
-// Center the alert box
-alertBox.style.position = 'fixed';
-alertBox.style.top = '50%';
-alertBox.style.left = '50%';
-alertBox.style.transform = 'translate(-50%, -50%)';
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    `;
 
-        // Call the callback function to hide the loading spinner
-        if (callback) callback();
-    }, 2000); // Simulated execution time (2 seconds)
+    const styleSheet = document.createElement("style");
+    styleSheet.type = "text/css";
+    styleSheet.innerText = styles;
+    document.head.appendChild(styleSheet);
 }
 
-function showLoadingAndRunGl() {
-    // Create and show loading spinner
-    createLoadingSpinner();
-
-    // Call the gl() function and pass a callback to hide the spinner
-    gl(function() {
-        // Hide the loading spinner after gl() finishes
-        removeLoadingSpinner();
-    });
-}
+// Call the function to add the styles to the document
+addStyles();
 
 
 
 
-
-
-// Create a style element
-const style = document.createElement('style');
-
-// Set the CSS styles as text content
-style.textContent = `
-.loading-spinner {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #efefef;
-  color: rgb(141, 102, 50);
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.097);
-  z-index: 9999;
-  width: 300px;
-  height: auto;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.spinner {
-  border: 8px solid rgba(65, 65, 65, 0.3);
-  border-top: 8px solid rgb(80, 80, 80);
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-`;
-
-// Append the style element to the head
-document.head.appendChild(style);
 
 
 

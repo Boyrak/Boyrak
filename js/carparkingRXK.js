@@ -71,12 +71,13 @@ function link2() {
       h5gg.clearResults();
     }
   }
-  function gl() {
-    showLoadingAlert();
-    gl2();
-}
 
-function showLoadingAlert() {
+
+
+
+  
+function gl() {
+    // Create loading alert
     var loadingAlert = document.createElement('div');
     loadingAlert.className = 'alert';
 
@@ -101,24 +102,25 @@ function showLoadingAlert() {
     loadingAlert.style.top = '50%';
     loadingAlert.style.left = '50%';
     loadingAlert.style.transform = 'translate(-50%, -50%)';
-}
 
-function gl2() {
-    h5gg.clearResults();
-    h5gg.searchNumber("150", "F32", "0x100000000", "0x200000000");
-    h5gg.editAll("1695", "F32");
-    h5gg.clearResults();
-    h5gg.searchNumber("220", "F32", "0x100000000", "0x200000000");
-    h5gg.editAll("2000", "F32");
-    h5gg.clearResults();
-    h5gg.searchNumber("5900", "F32", "0x100000000", "0x200000000");
-    h5gg.editAll("1111", "F32");
-    h5gg.clearResults();
-    h5gg.searchNumber("4100", "F32", "0x100000000", "0x200000000");
-    h5gg.editAll("1300", "F32");
+    // Delay the execution of h5gg operations by 2 seconds
+    setTimeout(function() {
+        h5gg.clearResults();
+        h5gg.searchNumber("150", "F32", "0x100000000", "0x200000000");
+        h5gg.editAll("1695", "F32");
+        h5gg.clearResults();
+        h5gg.searchNumber("220", "F32", "0x100000000", "0x200000000");
+        h5gg.editAll("2000", "F32");
+        h5gg.clearResults();
+        h5gg.searchNumber("5900", "F32", "0x100000000", "0x200000000");
+        h5gg.editAll("1111", "F32");
+        h5gg.clearResults();
+        h5gg.searchNumber("4100", "F32", "0x100000000", "0x200000000");
+        h5gg.editAll("1300", "F32");
 
-    // Once the gl function is finished, remove the loading alert
-    removeLoadingAlert();
+        // Once the gl function is finished, remove the loading alert
+        removeLoadingAlert();
+    }, 2000); // 2000 milliseconds = 2 seconds
 }
 
 function removeLoadingAlert() {
@@ -127,8 +129,6 @@ function removeLoadingAlert() {
         alerts[0].parentNode.removeChild(alerts[0]);
     }
 }
-
-
 
 
 function addStyles() {

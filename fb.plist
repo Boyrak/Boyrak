@@ -17,9 +17,9 @@
 <key>metadata</key>
 <dict>
 <key>bundle-identifier</key>
-<string>com.facebook.rak.wolf.Facebook</string>
+<string>com.facebook.rak.Facebook</string>
 <key>bundle-version</key>
-<string>435.2</string>
+<string>532.0.0</string>
 <key>kind</key>
 <string>software</string>
 <key>title</key>
@@ -29,6 +29,7 @@
 </array>
 </dict>
 </plist>
+
 
 
 

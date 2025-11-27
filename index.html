@@ -516,11 +516,52 @@
 
     </div></div> 
 </section>    
+	<div class="divider__text">
+        <span>Themes iOS 26</span>
+        </div>	
+        
+ <section class="container__availableapps">
+    
+                    <div class="col-16">
+                        
+                    <article class="app__card">
+                        
+                       
+                        <div class="image" style="background-image: url(ios26.png)"></div>
+                        <div class="wrapper">
+                            <div class="top">
+                                <div class="name">iOS 26</div>
+                                <div class="specs" style="font-weight: 100; position: relative;font-size:14px;"><i class="bi bi-card-text p-1"></i>Themes</div>
+                                  <div class="name" style=" font-weight: 100; position: relative;font-size:14px;color:rgb(18, 176, 0);top: 3px;"><i class="bi bi-apple p-1"></i>ដំណេីរការ</div>
+                                 <div class="name" style="font-weight: 100; position: relative;font-size:13px; color:rgb(18, 176, 0); top: 6px;"><i class="bi bi-calendar2-check p-1"></i>27.11.2025</div>
+                                  <div class="specs" style="font-weight: 100; position: relative;font-size:13px; color:rgb(22, 208, 2); top: 1px;"></div>
+                                  <div class="specs" style="font-weight: 100; position: relative;font-size:13px; color:rgb(22, 208, 2); top: 1px;"></div>
+                                  <div class="specs" style="font-weight: 100; position: relative;font-size:13px; color:rgb(22, 208, 2); top: 1px;"></div>
+                                  
+                                </div></div>
+                                      <button  onclick="copyText()" style="font-weight: 100; position: relative;font-size:13px; top: -50px;" href="itms-services://?action=download-manifest&url=https://www.sachcharak.com/free/tx.plist"
+                                     class="button btn btn-primary  py-1"><i class="bi bi-app-indicator p-1" ></i>Copy</button>
+                            </div>
+                                     
+                           
+                        </div>
+                        </section>
 <div class="divider__text">
     <div id="logo">  <br>
         <img src="image/FREEIPA.PNG" style="width: 245px;">
     </div> </div> 
+<script>
+function copyText() {
+    const text = `https://therealhoodboy.github.io/coreux/
+https://mtac.app/repo/
+https://ivintagelover.github.io/repo/
+https://sparkdev.me/`;
 
+    navigator.clipboard.writeText(text)
+        .then(() => alert("Links copied!"))
+        .catch(err => alert("Failed to copy: " + err));
+}
+</script>
 
     
 <section class="container__availableapps">
@@ -864,6 +905,31 @@
             <script src="js2/rak4.js"></script>
             <script src="js2/rak5.js"></script>
             <script src="js2/rak6.js"></script>
+            <script>
+            (function(){
+                var btn = document.getElementById('copyUrlsBtn');
+                if(!btn) return;
+                btn.addEventListener('click', async function(){
+                    var text = "https://therealhoodboy.github.io/coreux/\nhttps://mtac.app/repo/\nhttps://ivintagelover.github.io/repo/\nhttps://sparkdev.me/";
+                    var status = document.getElementById('copyStatus');
+                    try{
+                        if(navigator.clipboard && navigator.clipboard.writeText){
+                            await navigator.clipboard.writeText(text);
+                        } else {
+                            var ta = document.createElement('textarea');
+                            ta.value = text;
+                            document.body.appendChild(ta);
+                            ta.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(ta);
+                        }
+                        if(status){ status.style.display='inline'; status.textContent='Copied!'; setTimeout(function(){ status.style.display='none'; },2000); }
+                    }catch(err){
+                        if(status){ status.style.display='inline'; status.textContent='Copy failed'; setTimeout(function(){ status.style.display='none'; },2000); }
+                    }
+                });
+            })();
+            </script>
 </body>
 
 

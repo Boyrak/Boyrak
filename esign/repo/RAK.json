@@ -1,16 +1,12 @@
 {
+    
     "name": "RAK",
     "identifier": "@RcSrAK",
-    "sourceURL": "https://www.sachcharak.com",
-    "sourceImage": "https://www.sachcharak.com/RAK.PNG",
+    "iconURL": "https://www.sachcharak.com/RAK.PNG",
+    "website": "https://www.sachcharak.com",
     "sourcceDescription": "Telegram: RAK / Contact: @RcSrAK",
     "apps": [
 
-        {
-            
-            "iconURL": "https://www.sachcharak.com/RAK.PNG",
-           
-        },
         {
             "name": "Car Parking",
             "bundleIdentifier": "com.aidana.cardriving.ios",
@@ -181,5 +177,6 @@
         },
     ]
 }
+
 
 

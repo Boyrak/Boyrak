@@ -167,7 +167,7 @@
             "bundleIdentifier": "com.kinemaster.kios",
             "developerName": "RAK",
             "version": "8.0.10",
-            "versionDate": "2025-18-12T11:36:00+08:00",
+            "versionDate": "2025-12-18T11:36:00+08:00",
             "versionDescription": "Developer Name: RAK",
             "downloadURL": "https://www.dropbox.com/scl/fi/1tqkxacohfhtzt3ns127q/KineMaster-RAK-v8.0.8.ipa?rlkey=f99znr2k6xr2krsggto15xhla&st=zl8blmqj&dl=1",
             "localizedDescription": "KineMaster Pro",
@@ -179,6 +179,7 @@
         
     ]
 }
+
 
 
 

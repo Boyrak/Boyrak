@@ -21,20 +21,7 @@
             "isLanZouCloud": 1,
             "size": 1.07e+9
         },
-        {
-            "name": "Car Parking",
-            "bundleIdentifier": "com.aidana.cardriving.ios",
-            "developerName": "RAK",
-            "version": "2.3.8",
-            "versionDate": "2022-08-11T11:36:00+08:00",
-            "versionDescription": "Developer Name: RAK & lyheang\nFree Purchase",
-            "downloadURL": "https://archive.org/download/car-parking-rcs-v-4.7.2/Car%20Parking%20-%20RCS%20V4.7.2.ipa",
-            "localizedDescription": "Car Parking",
-            "iconURL": "https://www.sachcharak.com/image/CarParking-RCS.PNG",
-            "tintColor": "018084",
-            "isLanZouCloud": 1,
-            "size": 5.535e+8
-        },
+       
        {
             "name": "MLB Lite",
             "bundleIdentifier": "com.mobile.legends",
@@ -63,19 +50,19 @@
             "isLanZouCloud": 1,
             "size": 392690000
         },
-        {
-            "name": "CPU X - RCS",
-            "bundleIdentifier": "www.sachcharak.com",
+       {
+            "name": "Car Parking",
+            "bundleIdentifier": "com.aidana.cardriving.ios",
             "developerName": "RAK",
-            "version": "1.7.08",
+            "version": "2.3.8",
             "versionDate": "2022-08-11T11:36:00+08:00",
-            "versionDescription": "Developer Name: RAK & lyheang",
-            "downloadURL": "https://archive.org/download/cup-x-rcs-v-1.4.2/CUP-x%20-%20RCS%20%7C%20V%201.4.2.ipa",
-            "localizedDescription": "CPU X",
-            "iconURL": "https://www.sachcharak.com/image/CPU_X.PNG",
+            "versionDescription": "Developer Name: RAK & lyheang\nFree Purchase",
+            "downloadURL": "https://archive.org/download/car-parking-rcs-v-4.7.2/Car%20Parking%20-%20RCS%20V4.7.2.ipa",
+            "localizedDescription": "Car Parking",
+            "iconURL": "https://www.sachcharak.com/image/CarParking-RCS.PNG",
             "tintColor": "018084",
             "isLanZouCloud": 1,
-            "size": 26245857
+            "size": 5.535e+8
         },
         {
             "name": "Picart Gold-RCS",
@@ -92,61 +79,20 @@
             "size": 75570872
         },
         {
-            "name": "DJAY PRO-RCS",
-            "bundleIdentifier": "com.algoriddim.djay-iphone-free.rcs",
+            "name": "Djay PRO - RAK",
+            "bundleIdentifier": "com.algoriddim.djay-iphone-free",
             "developerName": "RAK",
             "version": "4.0",
             "versionDate": "2022-08-11T11:36:00+08:00",
-            "versionDescription": "Developer Name: RAK & lyheang",
-            "downloadURL": "https://archive.org/download/djay-pro-rcs/Djay%20Pro%20-%20RCS.ipa",
+            "versionDescription": "Developer Name: RAK",
+            "downloadURL": "https://archive.org/download/djay-pro-rak-v-5.5.2/Djay%20Pro%20-%20RAK%20v5.5.2.ipa",
             "localizedDescription": "Djay Pro",
-            "iconURL": "https://www.sachcharak.com/image/DJAYPRO-RCS.PNG",
+            "iconURL": "https://play-lh.googleusercontent.com/CDRK7UhWc0m5P1ZsOs9bFmlASqFjuCagKK1UEJ68IKu1vfZmP55M8RWjxjHvC4hI5fGc=s96-rw",
             "tintColor": "018084",
             "isLanZouCloud": 1,
-            "size": 199302840
+            "size": 4.882e+8
         },
-         {
-            "name": "FOCOS-RCS",
-            "bundleIdentifier": "com.focos.rcs",
-            "developerName": "RAK",
-            "version": "2.5.6",
-            "versionDate": "2022-08-11T11:36:00+08:00",
-            "versionDescription": "Developer Name: RAK & lyheang",
-            "downloadURL": "https://archive.org/download/focos-rcs-v-2.5.6-premium/Focos%20-%20RCS%20%7C%20V2.5.6%20Premium.ipa",
-            "localizedDescription": "FOCOS-RCS",
-            "iconURL": "https://www.sachcharak.com/image/FOCOS-RCS.PNG",
-            "tintColor": "018084",
-            "isLanZouCloud": 1,
-            "size": 268550799
-        },
-         {
-            "name": "Incredibox-RCS",
-            "bundleIdentifier": "com.sofarsogood.incredibox",
-            "developerName": "RAK",
-            "version": "0.5.2",
-            "versionDate": "2022-08-11T11:36:00+08:00",
-            "versionDescription": "Developer Name: RAK & lyheang",
-            "downloadURL": "https://archive.org/download/incredibox-rcs/Incredibox%20-%20RCS.ipa",
-            "localizedDescription": "Incredibox-RCS",
-            "iconURL": "https://www.sachcharak.com/image/Incredibox-RCS.PNG",
-            "tintColor": "018084",
-            "isLanZouCloud": 1,
-            "size": 154256015
-        },
-         {
-            "name": "Cross DJPro - RCS",
-            "bundleIdentifier": "com.mixvibes.iCrossDJ",
-            "developerName": "RAK",
-            "version": "3.7.1",
-            "versionDate": "2022-08-11T11:36:00+08:00",
-            "versionDescription": "Developer Name: RAK & lyheang",
-            "downloadURL": "https://archive.org/download/cross-djpro-rcs/Cross%20DJPro%20-%20RCS.ipa",
-            "localizedDescription": "Cross DJPro - RCS",
-            "iconURL": "https://www.sachcharak.com/image/CrossDJPro-RCS.PNG",
-            "tintColor": "018084",
-            "isLanZouCloud": 1,
-            "size": 67591209
-        },
+         
          {
             "name": "FL Studio",
             "bundleIdentifier": "com.imageline.FLStudioMobile",
@@ -179,6 +125,7 @@
         
     ]
 }
+
 
 
 

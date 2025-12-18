@@ -36,18 +36,32 @@
             "size": 5.535e+8
         },
        {
-            "name": "Mobile legends: Bang Bang",
+            "name": "MLB Lite",
             "bundleIdentifier": "com.mobile.legends",
             "developerName": "RAK",
-            "version": "1.7.08",
-            "versionDate": "2022-08-11T11:36:00+08:00",
-            "versionDescription": "Developer Name: RAK & lyheang\nOriginal + IGG",
-            "downloadURL": "https://archive.org/download/mobile-legends-bang-bang-v-1.7.08/Mobile%20legends%3A%20Bang%20Bang%20V1.7.08.ipa",
-            "localizedDescription": "MLB",
-            "iconURL": "https://www.sachcharak.com/image/MLB.JPEG",
+            "version": "2.1.30",
+            "versionDate": "2025-18-12T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK",
+            "downloadURL": "https://www.dropbox.com/scl/fi/ahu15jnqk4uxjre7pc9ni/ML_2.1.30_1.7.1_fix.ipa?rlkey=7sh4nhnl0gizx33mwdm7oakpf&st=nixja0ol&dl=1",
+            "localizedDescription": "Aimbot ESP Traget MiniMap Line Box Health Hero name Distance… Auto Ritri Room  Room info Purchase Key Buy From Telegram: @RcSrAK",
+            "iconURL": "https://play-lh.googleusercontent.com/NiIHdrOS85r76ggTpn1uLxslWAfmvi1WVVQY5Enrj3ZAcVBcb11RkkTFbej8qxB9UK0JPDhRVajVz_ogmqiC=w480-h960-rw",
             "tintColor": "018084",
             "isLanZouCloud": 1,
-            "size": 167814103
+            "size": 393810000
+        },
+         {
+            "name": "MLB Pro",
+            "bundleIdentifier": "com.mobile.legends",
+            "developerName": "RAK",
+            "version": "2.1.30",
+            "versionDate": "2025-18-12T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK",
+            "downloadURL": "https://www.dropbox.com/scl/fi/k9m0v2jku57a2uegtpt7l/ML_2.1.30_1.7.1_pro.ipa?rlkey=3c9uf3b8z3s553ud8bi3jzjbo&st=g9jcurzf&dl=1",
+            "localizedDescription": "Aimbot ESP Traget MiniMap Line Box Health Hero name Distance… Auto Ritri Room  Room info Purchase Key Buy From Telegram: @RcSrAK",
+            "iconURL": "https://play-lh.googleusercontent.com/NiIHdrOS85r76ggTpn1uLxslWAfmvi1WVVQY5Enrj3ZAcVBcb11RkkTFbej8qxB9UK0JPDhRVajVz_ogmqiC=w480-h960-rw",
+            "tintColor": "018084",
+            "isLanZouCloud": 1,
+            "size": 392690000
         },
         {
             "name": "CPU X - RCS",
@@ -153,7 +167,7 @@
             "bundleIdentifier": "com.kinemaster.kios",
             "developerName": "RAK",
             "version": "8.0.10",
-            "versionDate": "2022-08-11T11:36:00+08:00",
+            "versionDate": "2025-18-12T11:36:00+08:00",
             "versionDescription": "Developer Name: RAK",
             "downloadURL": "https://www.dropbox.com/scl/fi/1tqkxacohfhtzt3ns127q/KineMaster-RAK-v8.0.8.ipa?rlkey=f99znr2k6xr2krsggto15xhla&st=zl8blmqj&dl=1",
             "localizedDescription": "KineMaster Pro",
@@ -165,6 +179,7 @@
         
     ]
 }
+
 
 
 

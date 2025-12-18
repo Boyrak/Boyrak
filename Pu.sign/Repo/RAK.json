@@ -6,7 +6,26 @@
     "website": "https://www.sachcharak.com",
     "sourcceDescription": "Telegram: RAK / Contact: @RcSrAK",
     "apps": [
-   
+
+         {
+            "name": "Free Fire MOD",
+            "bundleIdentifier": "com.dts.freefireth2",
+            "developerName": "Fluorite",
+            "version": "1.118.1",
+            "versionDate": "2025-12-03T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK",
+            "downloadURL": "https://www.dropbox.com/scl/fi/wddks36ottn8smlq00bc6/FF_1.118.1_1.6.2.ipa?rlkey=mpjxq0qtjy9tr2qe1gulqlf3n&e=1&st=tdhp06zp&dl=1",
+            "localizedDescription": "•Aimbot [ Nearest Randomized Head Neak Body ]
+\n•Visuals [ Enemy ESP Line Box Health Nickname…]
+\n•Mic [ No Fog No FPS limit No Weapon Spread…. ]
+\n•Antiban 
+\n🔑 Purchase Key 🔑 
+\nBuy From Telegram: @RcSrAK",
+            "iconURL": "https://play-lh.googleusercontent.com/1wE91ae_1YIJtIjQ1YJz5RhAajxEpF1TfrXGg7tcrKl90MOnF7XdFj71pw_MSQbyhM5PYz-eRdeBFQBzSGrV=s96-rw",
+            "tintColor": "018084",
+            "isLanZouCloud": 1,
+            "size": 1.07e+9
+        },
         {
             "name": "Car Parking",
             "bundleIdentifier": "com.aidana.cardriving.ios",
@@ -177,6 +196,7 @@
         },
     ]
 }
+
 
 
 

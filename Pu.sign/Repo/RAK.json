@@ -67,17 +67,17 @@
 
         {
             "name": "Youtube - RAK",
-            "bundleIdentifier": "com.aidana.cardriving.ios",
+            "bundleIdentifier": "com.google.ios.youtube",
             "developerName": "RAK",
-            "version": "2.6.6",
+            "version": "19.41.3",
             "versionDate": "2025-12-19T11:36:00+08:00",
             "versionDescription": "Developer Name: RAK",
-            "downloadURL": "https://archive.org/download/car-parking-rak-v-4.9.6/Car%20Parking%20-%20RAK%20v4.9.6.ipa",
-            "localizedDescription": "Free Store ( press buy then cancel ) បេីកបិទ Glitch បានគ្រប់ពេល ( Server Original )Mod Car Glitch ( Server Original ) មានផែនដី មានច្រេីន option ងាយស្រួលដល់ការប្រេីប្រាស់",
-            "iconURL": "https://play-lh.googleusercontent.com/86cQqI_vflAIckhMPWltYthLFh4YnemCi5hXm0VCQe4Lbj346-jH3r6uy3lsQtpO9A=s96-rw",
+            "downloadURL": "https://archive.org/download/you-tube-rak-v-20.50.9/YouTube%20-%20RAK%20v20.50.9.ipa",
+            "localizedDescription": "Remove ads Background Playback Premium",
+            "iconURL": "https://play-lh.googleusercontent.com/6am0i3walYwNLc08QOOhRJttQENNGkhlKajXSERf3JnPVRQczIyxw2w3DxeMRTOSdsY=s96-rw",
             "tintColor": "018084",
             "isLanZouCloud": 1,
-            "size": 1.7e+9
+            "size": 1.13e+8
         },
        
         {
@@ -127,6 +127,7 @@
         
     ]
 }
+
 
 
 

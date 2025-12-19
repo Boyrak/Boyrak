@@ -29,12 +29,12 @@
             "version": "2.1.30",
             "versionDate": "2025-12-18T11:36:00+08:00",
             "versionDescription": "Developer Name: RAK",
-            "downloadURL": "https://www.dropbox.com/scl/fi/ahu15jnqk4uxjre7pc9ni/ML_2.1.30_1.7.1_fix.ipa?rlkey=7sh4nhnl0gizx33mwdm7oakpf&st=nixja0ol&dl=1",
+            "downloadURL": "https://www.dropbox.com/scl/fi/6rvcujd0x1lxj2klc2n2k/ML_2.1.40_1.7.3_LITE.ipa?rlkey=x9jbl3rscw6tqk1f84nnk1sgm&st=xrl9agdv&dl=1",
             "localizedDescription": "Aimbot ESP Traget MiniMap Line Box Health Hero name Distance… Auto Ritri Room  Room info Purchase Key Buy From Telegram: @RcSrAK",
-            "iconURL": "https://play-lh.googleusercontent.com/NiIHdrOS85r76ggTpn1uLxslWAfmvi1WVVQY5Enrj3ZAcVBcb11RkkTFbej8qxB9UK0JPDhRVajVz_ogmqiC=w480-h960-rw",
+            "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/43/c6/a8/43c6a8ad-3115-a9fe-2db2-4697d8a98dad/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/400x400ia-75.webp",
             "tintColor": "018084",
             "isLanZouCloud": 1,
-            "size": 393810000
+            "size": 3.978e+8
         },
          {
             "name": "MLB Pro",
@@ -43,12 +43,12 @@
             "version": "2.1.30",
             "versionDate": "2025-12-18T11:36:00+08:00",
             "versionDescription": "Developer Name: RAK",
-            "downloadURL": "https://www.dropbox.com/scl/fi/k9m0v2jku57a2uegtpt7l/ML_2.1.30_1.7.1_pro.ipa?rlkey=3c9uf3b8z3s553ud8bi3jzjbo&st=g9jcurzf&dl=1",
+            "downloadURL": "https://www.dropbox.com/scl/fi/gngzprjpr5icsaazlbs2c/ML_2.1.40_1.7.3_PRO.ipa?rlkey=w350730f19zcffgjjpuh5jzi2&st=xgwaapf6&dl=1",
             "localizedDescription": "Aimbot ESP Traget MiniMap Line Box Health Hero name Distance… Auto Ritri Room  Room info Purchase Key Buy From Telegram: @RcSrAK",
-            "iconURL": "https://play-lh.googleusercontent.com/NiIHdrOS85r76ggTpn1uLxslWAfmvi1WVVQY5Enrj3ZAcVBcb11RkkTFbej8qxB9UK0JPDhRVajVz_ogmqiC=w480-h960-rw",
+            "iconURL": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/43/c6/a8/43c6a8ad-3115-a9fe-2db2-4697d8a98dad/AppIcon-1x_U007emarketing-0-7-0-85-220-0.png/400x400ia-75.webp",
             "tintColor": "018084",
             "isLanZouCloud": 1,
-            "size": 392690000
+            "size": 397280000
         },
        {
             "name": "Car Parking - RAK",
@@ -127,6 +127,7 @@
         
     ]
 }
+
 
 
 

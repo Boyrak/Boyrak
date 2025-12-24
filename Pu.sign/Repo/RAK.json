@@ -70,10 +70,10 @@
             "bundleIdentifier": "com.google.ios.youtube",
             "developerName": "RAK",
             "version": "19.41.3",
-            "versionDate": "2025-12-19T11:36:00+08:00",
+            "versionDate": "2025-12-24T11:36:00+08:00",
             "versionDescription": "Developer Name: RAK",
-            "downloadURL": "https://www.dropbox.com/scl/fi/38y3w1ujfu9vta7y5d10q/YouTube-RAK-v20.50.9.ipa?rlkey=ms474bwjvfqn6exz4ipsnacdf&st=90leb8fs&dl=1",
-            "localizedDescription": "Remove ads Background Playback Premium",
+            "downloadURL": "https://www.dropbox.com/scl/fi/t53hznfabi321kkpjw4gk/YouTube-RAK-v20.50.9-1.ipa?rlkey=wwrzr0hmf9t7d7s7wogu43du4&st=i6tbb9my&dl=1",
+            "localizedDescription": "Remove ads Background Playback Premium Allow HD on Cellular Disable Age Restriction Disable Video paused. Continue watching ? Acc Signin",
             "iconURL": "https://play-lh.googleusercontent.com/6am0i3walYwNLc08QOOhRJttQENNGkhlKajXSERf3JnPVRQczIyxw2w3DxeMRTOSdsY=s96-rw",
             "tintColor": "018084",
             "isLanZouCloud": 1,
@@ -127,6 +127,7 @@
         
     ]
 }
+
 
 
 

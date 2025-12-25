@@ -1,0 +1,63 @@
+{
+    
+    "name": "RAK Ads",
+    "identifier": "@RcSrAK",
+    "iconURL": "https://www.sachcharak.com/Pu.sign/Repo/rak.jpg",
+    "website": "https://www.sachcharak.com",
+    "sourcceDescription": "Telegram: RAK / Contact: @RcSrAK",
+    "apps": [
+
+         {
+            "name": "ads manager Clone",
+            "bundleIdentifier": "com.facebook.Rak.MAdman",
+            "developerName": "RAK",
+            "version": "457.0",
+            "versionDate": "2025-12-24T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK",
+            "downloadURL": "https://www.dropbox.com/scl/fi/7m89kdqkjnmq3k6n93660/Ads-Manager-v457.0.ipa?rlkey=q8xit1qjpordx48kn1eltqbb6&st=kb722h8f&dl=1",
+            "localizedDescription": "Multi App",
+            "iconURL": "https://play-lh.googleusercontent.com/Uku36RjbFRupjCW6a8py_Jvk9PY0xYdGK-zXyrGxFrcYEq_dKVfFse4ZRY_0LTOFtvdD=w480-h960-rw",
+            "tintColor": "018084",
+            "isLanZouCloud": 1,
+            "size": 37910000
+        },
+       
+       
+        
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

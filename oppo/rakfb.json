@@ -10,9 +10,9 @@
          {
             "name": "Facebook Clone",
             "bundleIdentifier": "com.facebook.rak.Facebook",
-            "developerName": "Fluorite",
-            "version": "1.118.1",
-            "versionDate": "2025-12-03T11:36:00+08:00",
+            "developerName": "RAK",
+            "version": "543.0.0",
+            "versionDate": "2025-12-24T11:36:00+08:00",
             "versionDescription": "Developer Name: RAK",
             "downloadURL": "https://www.dropbox.com/scl/fi/x69sxzxhsp8plb8h8zqnr/Facebook-RAK-v543.0.0.ipa?rlkey=mv8qpfaqyn7m47zurrny99cw0&st=cjtcttr8&dl=1",
             "localizedDescription": "Multi App",
@@ -26,38 +26,3 @@
         
     ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,63 @@
+{
+    
+    "name": "RAK",
+    "identifier": "@RcSrAK",
+    "iconURL": "https://www.sachcharak.com/Pu.sign/Repo/rak.jpg",
+    "website": "https://www.sachcharak.com",
+    "sourcceDescription": "Telegram: RAK / Contact: @RcSrAK",
+    "apps": [
+
+         {
+            "name": "Facebook Clone",
+            "bundleIdentifier": "com.facebook.rak.Facebook",
+            "developerName": "Fluorite",
+            "version": "1.118.1",
+            "versionDate": "2025-12-03T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK",
+            "downloadURL": "https://www.dropbox.com/scl/fi/x69sxzxhsp8plb8h8zqnr/Facebook-RAK-v543.0.0.ipa?rlkey=mv8qpfaqyn7m47zurrny99cw0&st=cjtcttr8&dl=1",
+            "localizedDescription": "Multi App",
+            "iconURL": "https://play-lh.googleusercontent.com/KCMTYuiTrKom4Vyf0G4foetVOwhKWzNbHWumV73IXexAIy5TTgZipL52WTt8ICL-oIo=w480-h960-rw",
+            "tintColor": "018084",
+            "isLanZouCloud": 1,
+            "size": 169690000
+        },
+       
+       
+        
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

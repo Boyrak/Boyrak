@@ -129,7 +129,7 @@
             "name": "Alight Motion - RAK",
             "bundleIdentifier": "com.alightcreative.motion",
             "developerName": "RAK",
-            "version": "8.0.12",
+            "version": "6.2.47",
             "versionDate": "2025-12-30T11:36:00+08:00",
             "versionDescription": "Developer Name: RAK",
             "downloadURL": "https://www.dropbox.com/scl/fi/3ncdf7dl4z0svj39b7fdk/Alight-Motion-RAK-v6.2.47.ipa?rlkey=f8uirpzacmucqr82v39it8y98&st=x4334q07&dl=1",
@@ -139,8 +139,24 @@
             "isLanZouCloud": 1,
             "size": 91360000
         },
+        
+        {
+            "name": "Picsart - RAK",
+            "bundleIdentifier": "com.picsart.studio",
+            "developerName": "RAK",
+            "version": "29.1.2",
+            "versionDate": "2025-12-30T11:36:00+08:00",
+            "versionDescription": "Developer Name: RAK",
+            "downloadURL": "https://www.dropbox.com/scl/fi/bqqgfzygf5sw0b98aylmp/PicsArt-RAK-v29.1.2.ipa?rlkey=wusgpo9uduufgcxbtwrst5bmk&st=pgqkt29w&dl=1",
+            "localizedDescription": "Unlocked Plus Pro Sign in to Activate",
+            "iconURL": "https://play-lh.googleusercontent.com/1JMJ518jogwPeaD0pYn2mBu1cRLD0xRi45wNbtTIRvam1_xx-y3KJOjRAx-W9P4Lf0U=s96-rw",
+            "tintColor": "018084",
+            "isLanZouCloud": 1,
+            "size": 88040000
+        },
     ]
 }
+
 
 
 

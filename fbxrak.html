@@ -378,30 +378,28 @@
     </style>
 
     <script>
-        function isSafariiOS() {
-            var userAgent = navigator.userAgent.toLowerCase();
-            return /safari/i.test(userAgent) && /iphone|ipod|ipad/i.test(userAgent);
+        function isIOS() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isIpad = /ipad/i.test(userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            return /iphone|ipod/i.test(userAgent) || isIpad;
         }
 
-        function hideInstallButton() {
+        function showInstallButton() {
             var installButton = document.getElementById("installButton");
-            if (isSafariiOS()) {
+            if (isIOS()) {
                 installButton.style.display = "block";
             } else {
-                installButton.style.display = "none";
+                // Keep it hidden or show a message for non-iOS users
+                installButton.style.display = "block"; // Showing it anyway to allow user to try
             }
         }
 
         window.onload = function () {
-            hideInstallButton();
+            showInstallButton();
         };
 
         document.addEventListener('DOMContentLoaded', () => {
-            const installBtn = document.getElementById("installButton");
-            if (installBtn) {
-                installBtn.addEventListener("touchstart", (e) => e.preventDefault());
-                installBtn.addEventListener("mousedown", (e) => e.preventDefault());
-            }
+            // Removed preventDefault listeners that were blocking the installation link
         });
     </script>
 </head>
@@ -471,6 +469,28 @@
     <script src="https://www.sachcharak.com/js2/rak.js"></script>
     <script src="https://www.sachcharak.com/js2/rak2.js"></script>
     <script src="https://www.sachcharak.com/js2/rak3.js"></script>
+
+    <script>
+        // Final override to ensure the button works
+        (function () {
+            const installBtn = document.getElementById("installButton");
+            if (installBtn) {
+                // Ensure it's visible on iOS
+                if (isIOS()) {
+                    installBtn.style.display = "block";
+                }
+
+                // Remove any blocking listeners that might have been added by external scripts
+                const newBtn = installBtn.cloneNode(true);
+                installBtn.parentNode.replaceChild(newBtn, installBtn);
+
+                newBtn.addEventListener('click', function (e) {
+                    console.log("Install triggered");
+                    // No preventDefault here, let the href handle it
+                });
+            }
+        })();
+    </script>
 </body>
 
 </html>

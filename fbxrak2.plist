@@ -17,9 +17,9 @@
 <key>metadata</key>
 <dict>
 <key>bundle-identifier</key>
-<string>com.facebook.Facebook.download.vd</string>
+<string>com.facebook.Facebook.vd</string>
 <key>bundle-version</key>
-<string>543.0.0</string>
+<string>532.0.0</string>
 <key>kind</key>
 <string>software</string>
 <key>title</key>
@@ -29,6 +29,7 @@
 </array>
 </dict>
 </plist>
+
 
 
 

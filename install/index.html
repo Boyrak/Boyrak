@@ -212,6 +212,7 @@
         <p class="status" id="statusText">Preparing install link...</p>
     </div>
 
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         const params = new URLSearchParams(window.location.search);
         const url = params.get('url');
@@ -225,6 +226,12 @@
         const iconArea = document.getElementById('iconArea');
         const title = document.getElementById('title');
         const appNameLabel = document.getElementById('appNameLabel');
+
+        // Tell Telegram WebApp we are ready
+        if (window.Telegram && window.Telegram.WebApp) {
+            Telegram.WebApp.ready();
+            Telegram.WebApp.expand();
+        }
 
         // Set app icon
         if (icon) {
@@ -247,17 +254,35 @@
             document.title = `Installing ${name}...`;
         }
 
+        // Function to open install link — must go through Safari for itms-services://
+        function openInstall() {
+            if (window.Telegram && window.Telegram.WebApp && Telegram.WebApp.openLink) {
+                // Open in external browser (Safari on iOS) — required for OTA install
+                Telegram.WebApp.openLink(url);
+            } else {
+                // Fallback: try direct redirect
+                window.location.href = url;
+            }
+        }
+
         if (url) {
-            installBtn.href = url;
+            // Set button click
+            installBtn.removeAttribute('href');
             installBtn.style.display = 'inline-flex';
+            installBtn.style.cursor = 'pointer';
+            installBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openInstall();
+            });
+
             statusText.textContent = 'Tap Install App to begin!';
             spinner.style.display = 'none';
 
-            // Auto-open after short delay
+            // Auto trigger after short delay
             setTimeout(() => {
-                window.location.href = url;
-                statusText.textContent = 'Opening installer... if nothing happens, tap the button above.';
-            }, 1200);
+                openInstall();
+                statusText.textContent = 'Opening Safari installer... if nothing happens, tap the button above.';
+            }, 1000);
         } else {
             spinner.style.display = 'none';
             errorBox.style.display = 'block';

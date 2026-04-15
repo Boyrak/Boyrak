@@ -212,13 +212,11 @@
         <p class="status" id="statusText">Preparing install link...</p>
     </div>
 
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         const params = new URLSearchParams(window.location.search);
         const url = params.get('url');
         const name = params.get('name');
         const icon = params.get('icon');
-        const isRedirect = params.get('redirect');
 
         const spinner = document.getElementById('spinner');
         const installBtn = document.getElementById('installBtn');
@@ -227,30 +225,6 @@
         const iconArea = document.getElementById('iconArea');
         const title = document.getElementById('title');
         const appNameLabel = document.getElementById('appNameLabel');
-
-        // If we are in the external Safari browser (triggered by openLink)
-        if (isRedirect === '1' && url) {
-            document.body.innerHTML = `
-                <div style="text-align: center; padding-top: 50px; font-family: sans-serif; color: white;">
-                    <br><br><br>
-                    <h1 style="font-size: 24px;">Opening Installer...</h1>
-                    <p style="margin-top: 15px; color: #888;">Wait a moment for the iOS prompt.</p>
-                    <a href="${url}" style="display:inline-block; margin-top: 30px; padding: 15px 30px; background: #6366f1; color: white; text-decoration: none; border-radius: 12px; font-weight: bold;">Tap Here if it doesn't open</a>
-                </div>
-            `;
-            setTimeout(() => {
-                window.location.href = url;
-            }, 300);
-            
-            // Stop execution here
-            throw new Error('Redirecting to OTA');
-        }
-
-        // Init Telegram WebApp
-        if (window.Telegram && window.Telegram.WebApp) {
-            Telegram.WebApp.ready();
-            Telegram.WebApp.expand();
-        }
 
         // Set app icon
         if (icon) {
@@ -269,31 +243,21 @@
         // Set app name
         if (name) {
             title.textContent = name;
-            appNameLabel.textContent = 'Tap the button below to install on your iPhone';
-            document.title = `Install ${name}`;
+            appNameLabel.textContent = 'Tap below to install on your iPhone or iPad';
+            document.title = `Installing ${name}...`;
         }
 
         if (url) {
+            installBtn.href = url;
             installBtn.style.display = 'inline-flex';
+            statusText.textContent = 'Tap Install App to begin!';
             spinner.style.display = 'none';
-            statusText.textContent = 'Tap the button above to start installing!';
 
-            installBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                // We must open an HTTPS URL externally, which will then trigger the itms-services:// link
-                if (window.Telegram && window.Telegram.WebApp && Telegram.WebApp.openLink) {
-                    // Safely construct the external URL
-                    const externalUrl = new URL(window.location.href);
-                    // Add redirect flag to query String
-                    externalUrl.searchParams.set('redirect', '1');
-                    
-                    Telegram.WebApp.openLink(externalUrl.toString());
-                } else {
-                    // Fallback for regular web browsers
-                    window.location.href = url;
-                }
-            });
+            // Auto-open after short delay
+            setTimeout(() => {
+                window.location.href = url;
+                statusText.textContent = 'Opening installer... if nothing happens, tap the button above.';
+            }, 1200);
         } else {
             spinner.style.display = 'none';
             errorBox.style.display = 'block';

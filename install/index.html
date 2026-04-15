@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installing App...</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0a0a0f;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            color: #ffffff;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 48px 40px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 80px rgba(99, 102, 241, 0.12);
+        }
+
+        .logo {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 36px;
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.4);
+        }
+
+        h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .install-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 4px 24px rgba(99, 102, 241, 0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .install-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.7);
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-top-color: #6366f1;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .status {
+            font-size: 13px;
+            color: rgba(255,255,255,0.3);
+            margin-top: 20px;
+        }
+
+        .error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 13px;
+            color: #f87171;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <div class="logo">📲</div>
+        <h1>Installing App</h1>
+        <p>Preparing your app installation.<br>Tap the button below if it doesn't open automatically.</p>
+
+        <div class="spinner" id="spinner"></div>
+
+        <a href="#" id="installBtn" class="install-btn" style="display:none;">
+            📲 Install App
+        </a>
+
+        <div class="error" id="errorBox">
+            ❌ No install link provided. Please use this page from the Telegram bot.
+        </div>
+
+        <p class="status" id="statusText">Preparing install link...</p>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const url = params.get('url');
+
+        const spinner = document.getElementById('spinner');
+        const installBtn = document.getElementById('installBtn');
+        const statusText = document.getElementById('statusText');
+        const errorBox = document.getElementById('errorBox');
+
+        if (url) {
+            installBtn.href = url;
+            installBtn.style.display = 'inline-block';
+            statusText.textContent = 'Tap Install App to begin!';
+            spinner.style.display = 'none';
+
+            // Auto-open after short delay for seamless experience
+            setTimeout(() => {
+                window.location.href = url;
+                statusText.textContent = 'Opening installer... if nothing happens, tap the button above.';
+            }, 1200);
+        } else {
+            spinner.style.display = 'none';
+            errorBox.style.display = 'block';
+            statusText.textContent = 'Invalid link.';
+        }
+    </script>
+</body>
+</html>

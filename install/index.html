@@ -230,8 +230,18 @@
 
         // If we are in the external Safari browser (triggered by openLink)
         if (isRedirect === '1' && url) {
-            document.body.innerHTML = '<div style="text-align: center; margin-top: 50px;"><h1>Opening Installer...</h1><p>Wait a moment for the prompt.</p></div>';
-            window.location.href = url;
+            document.body.innerHTML = `
+                <div style="text-align: center; padding-top: 50px; font-family: sans-serif; color: white;">
+                    <br><br><br>
+                    <h1 style="font-size: 24px;">Opening Installer...</h1>
+                    <p style="margin-top: 15px; color: #888;">Wait a moment for the iOS prompt.</p>
+                    <a href="${url}" style="display:inline-block; margin-top: 30px; padding: 15px 30px; background: #6366f1; color: white; text-decoration: none; border-radius: 12px; font-weight: bold;">Tap Here if it doesn't open</a>
+                </div>
+            `;
+            setTimeout(() => {
+                window.location.href = url;
+            }, 300);
+            
             // Stop execution here
             throw new Error('Redirecting to OTA');
         }
@@ -273,11 +283,12 @@
                 
                 // We must open an HTTPS URL externally, which will then trigger the itms-services:// link
                 if (window.Telegram && window.Telegram.WebApp && Telegram.WebApp.openLink) {
-                    const currentUrl = window.location.href;
-                    const sep = currentUrl.includes('?') ? '&' : '?';
-                    const externalUrl = currentUrl + sep + 'redirect=1';
+                    // Safely construct the external URL
+                    const externalUrl = new URL(window.location.href);
+                    // Add redirect flag to query String
+                    externalUrl.searchParams.set('redirect', '1');
                     
-                    Telegram.WebApp.openLink(externalUrl);
+                    Telegram.WebApp.openLink(externalUrl.toString());
                 } else {
                     // Fallback for regular web browsers
                     window.location.href = url;

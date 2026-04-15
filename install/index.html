@@ -218,6 +218,7 @@
         const url = params.get('url');
         const name = params.get('name');
         const icon = params.get('icon');
+        const isRedirect = params.get('redirect');
 
         const spinner = document.getElementById('spinner');
         const installBtn = document.getElementById('installBtn');
@@ -226,6 +227,14 @@
         const iconArea = document.getElementById('iconArea');
         const title = document.getElementById('title');
         const appNameLabel = document.getElementById('appNameLabel');
+
+        // If we are in the external Safari browser (triggered by openLink)
+        if (isRedirect === '1' && url) {
+            document.body.innerHTML = '<div style="text-align: center; margin-top: 50px;"><h1>Opening Installer...</h1><p>Wait a moment for the prompt.</p></div>';
+            window.location.href = url;
+            // Stop execution here
+            throw new Error('Redirecting to OTA');
+        }
 
         // Init Telegram WebApp
         if (window.Telegram && window.Telegram.WebApp) {
@@ -255,11 +264,25 @@
         }
 
         if (url) {
-            // Set real href directly — user must tap button to open itms-services:// in Safari
-            installBtn.href = url;
             installBtn.style.display = 'inline-flex';
             spinner.style.display = 'none';
             statusText.textContent = 'Tap the button above to start installing!';
+
+            installBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // We must open an HTTPS URL externally, which will then trigger the itms-services:// link
+                if (window.Telegram && window.Telegram.WebApp && Telegram.WebApp.openLink) {
+                    const currentUrl = window.location.href;
+                    const sep = currentUrl.includes('?') ? '&' : '?';
+                    const externalUrl = currentUrl + sep + 'redirect=1';
+                    
+                    Telegram.WebApp.openLink(externalUrl);
+                } else {
+                    // Fallback for regular web browsers
+                    window.location.href = url;
+                }
+            });
         } else {
             spinner.style.display = 'none';
             errorBox.style.display = 'block';

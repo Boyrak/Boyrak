@@ -227,7 +227,7 @@
         const title = document.getElementById('title');
         const appNameLabel = document.getElementById('appNameLabel');
 
-        // Tell Telegram WebApp we are ready
+        // Init Telegram WebApp
         if (window.Telegram && window.Telegram.WebApp) {
             Telegram.WebApp.ready();
             Telegram.WebApp.expand();
@@ -250,39 +250,16 @@
         // Set app name
         if (name) {
             title.textContent = name;
-            appNameLabel.textContent = 'Tap below to install on your iPhone or iPad';
-            document.title = `Installing ${name}...`;
-        }
-
-        // Function to open install link — must go through Safari for itms-services://
-        function openInstall() {
-            if (window.Telegram && window.Telegram.WebApp && Telegram.WebApp.openLink) {
-                // Open in external browser (Safari on iOS) — required for OTA install
-                Telegram.WebApp.openLink(url);
-            } else {
-                // Fallback: try direct redirect
-                window.location.href = url;
-            }
+            appNameLabel.textContent = 'Tap the button below to install on your iPhone';
+            document.title = `Install ${name}`;
         }
 
         if (url) {
-            // Set button click
-            installBtn.removeAttribute('href');
+            // Set real href directly — user must tap button to open itms-services:// in Safari
+            installBtn.href = url;
             installBtn.style.display = 'inline-flex';
-            installBtn.style.cursor = 'pointer';
-            installBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                openInstall();
-            });
-
-            statusText.textContent = 'Tap Install App to begin!';
             spinner.style.display = 'none';
-
-            // Auto trigger after short delay
-            setTimeout(() => {
-                openInstall();
-                statusText.textContent = 'Opening Safari installer... if nothing happens, tap the button above.';
-            }, 1000);
+            statusText.textContent = 'Tap the button above to start installing!';
         } else {
             spinner.style.display = 'none';
             errorBox.style.display = 'block';

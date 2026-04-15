@@ -29,37 +29,46 @@
             box-shadow: 0 0 80px rgba(99, 102, 241, 0.12);
         }
 
-        .logo {
-            width: 72px;
-            height: 72px;
+        .app-icon {
+            width: 96px;
+            height: 96px;
+            border-radius: 22px;
+            object-fit: cover;
+            margin: 0 auto 24px;
+            display: block;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+        }
+
+        .default-logo {
+            width: 96px;
+            height: 96px;
             background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            border-radius: 20px;
+            border-radius: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 24px;
-            font-size: 36px;
+            font-size: 48px;
             box-shadow: 0 8px 32px rgba(99, 102, 241, 0.4);
         }
 
         h1 {
             font-size: 22px;
             font-weight: 700;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #fff, #a5b4fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            color: #fff;
         }
 
-        p {
-            font-size: 14px;
+        .app-name {
+            font-size: 15px;
             color: rgba(255,255,255,0.5);
-            margin-bottom: 32px;
-            line-height: 1.6;
+            margin-bottom: 28px;
         }
 
         .install-btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             padding: 16px 40px;
             background: linear-gradient(135deg, #6366f1, #8b5cf6);
             color: #fff;
@@ -106,13 +115,23 @@
             margin-top: 20px;
             display: none;
         }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
     </style>
 </head>
 <body>
-    <div class="card" id="card">
-        <div class="logo">📲</div>
-        <h1>Installing App</h1>
-        <p>Preparing your app installation.<br>Tap the button below if it doesn't open automatically.</p>
+    <div class="card">
+        <!-- Icon area -->
+        <div id="iconArea"></div>
+
+        <h1 id="title">Installing App</h1>
+        <p class="app-name" id="appNameLabel">Preparing your installation...</p>
 
         <div class="spinner" id="spinner"></div>
 
@@ -129,20 +148,47 @@
 
     <script>
         const params = new URLSearchParams(window.location.search);
-        const url = params.get('url');
+        const url    = params.get('url');
+        const name   = params.get('name');
+        const icon   = params.get('icon');
 
-        const spinner = document.getElementById('spinner');
+        const spinner    = document.getElementById('spinner');
         const installBtn = document.getElementById('installBtn');
         const statusText = document.getElementById('statusText');
-        const errorBox = document.getElementById('errorBox');
+        const errorBox   = document.getElementById('errorBox');
+        const iconArea   = document.getElementById('iconArea');
+        const title      = document.getElementById('title');
+        const appNameLabel = document.getElementById('appNameLabel');
+
+        // Set app icon
+        if (icon) {
+            const img = document.createElement('img');
+            img.src = icon;
+            img.alt = name || 'App';
+            img.className = 'app-icon';
+            img.onerror = () => {
+                // Fallback to emoji logo if image fails to load
+                iconArea.innerHTML = '<div class="default-logo">📲</div>';
+            };
+            iconArea.appendChild(img);
+        } else {
+            iconArea.innerHTML = '<div class="default-logo">📲</div>';
+        }
+
+        // Set app name
+        if (name) {
+            title.textContent = name;
+            appNameLabel.textContent = 'Tap below to install on your iPhone or iPad';
+            document.title = `Installing ${name}...`;
+        }
 
         if (url) {
             installBtn.href = url;
-            installBtn.style.display = 'inline-block';
+            installBtn.style.display = 'inline-flex';
             statusText.textContent = 'Tap Install App to begin!';
             spinner.style.display = 'none';
 
-            // Auto-open after short delay for seamless experience
+            // Auto-open after short delay
             setTimeout(() => {
                 window.location.href = url;
                 statusText.textContent = 'Opening installer... if nothing happens, tap the button above.';

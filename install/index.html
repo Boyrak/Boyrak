@@ -1,32 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Installing App...</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0a0a0f;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text: #ffffff;
+            --subtext: rgba(255, 255, 255, 0.5);
+            --status: rgba(255, 255, 255, 0.3);
+            --glow: rgba(99, 102, 241, 0.12);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            --btn-shadow: 0 4px 24px rgba(99, 102, 241, 0.5);
+            --btn-shadow-hover: 0 8px 32px rgba(99, 102, 241, 0.7);
+            --spinner-track: rgba(255, 255, 255, 0.1);
+            --error-bg: rgba(239, 68, 68, 0.1);
+            --error-border: rgba(239, 68, 68, 0.3);
+            --error-text: #f87171;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f0f0f7;
+                --card-bg: rgba(255, 255, 255, 0.85);
+                --card-border: rgba(0, 0, 0, 0.08);
+                --text: #111111;
+                --subtext: rgba(0, 0, 0, 0.5);
+                --status: rgba(0, 0, 0, 0.35);
+                --glow: rgba(99, 102, 241, 0.08);
+                --shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+                --btn-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+                --btn-shadow-hover: 0 8px 28px rgba(99, 102, 241, 0.55);
+                --spinner-track: rgba(0, 0, 0, 0.08);
+                --error-bg: rgba(239, 68, 68, 0.06);
+                --error-border: rgba(239, 68, 68, 0.2);
+                --error-text: #dc2626;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #0a0a0f;
+            background: var(--bg);
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
-            color: #ffffff;
+            color: var(--text);
+            transition: background 0.3s;
         }
 
         .card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 24px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 28px;
             padding: 48px 40px;
             max-width: 420px;
             width: 90%;
             text-align: center;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 0 80px rgba(99, 102, 241, 0.12);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            box-shadow: 0 0 80px var(--glow);
+            transition: background 0.3s, border-color 0.3s;
         }
 
         .app-icon {
@@ -36,7 +80,7 @@
             object-fit: cover;
             margin: 0 auto 24px;
             display: block;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            box-shadow: var(--shadow);
         }
 
         .default-logo {
@@ -49,20 +93,23 @@
             justify-content: center;
             margin: 0 auto 24px;
             font-size: 48px;
-            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.4);
+            box-shadow: var(--btn-shadow);
         }
 
         h1 {
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 8px;
-            color: #fff;
+            color: var(--text);
+            transition: color 0.3s;
         }
 
         .app-name {
-            font-size: 15px;
-            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+            color: var(--subtext);
             margin-bottom: 28px;
+            line-height: 1.5;
+            transition: color 0.3s;
         }
 
         .install-btn {
@@ -76,59 +123,78 @@
             font-weight: 600;
             border-radius: 14px;
             text-decoration: none;
-            box-shadow: 0 4px 24px rgba(99, 102, 241, 0.5);
+            box-shadow: var(--btn-shadow);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .install-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.7);
+            box-shadow: var(--btn-shadow-hover);
         }
 
         .spinner {
             width: 40px;
             height: 40px;
-            border: 3px solid rgba(255,255,255,0.1);
+            border: 3px solid var(--spinner-track);
             border-top-color: #6366f1;
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
             margin: 0 auto 20px;
+            transition: border-color 0.3s;
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .status {
             font-size: 13px;
-            color: rgba(255,255,255,0.3);
+            color: var(--status);
             margin-top: 20px;
+            transition: color 0.3s;
         }
 
         .error {
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.3);
+            background: var(--error-bg);
+            border: 1px solid var(--error-border);
             border-radius: 12px;
             padding: 16px;
             font-size: 13px;
-            color: #f87171;
+            color: var(--error-text);
             margin-top: 20px;
             display: none;
         }
 
-        .pulse {
-            animation: pulse 2s ease-in-out infinite;
+        .badge {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.12);
+            color: #818cf8;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 99px;
+            margin-bottom: 16px;
         }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+
+        @media (prefers-color-scheme: light) {
+            .badge {
+                background: rgba(99, 102, 241, 0.08);
+                color: #4f46e5;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="card">
         <!-- Icon area -->
         <div id="iconArea"></div>
+
+        <div class="badge">iOS App Install</div>
 
         <h1 id="title">Installing App</h1>
         <p class="app-name" id="appNameLabel">Preparing your installation...</p>
@@ -148,16 +214,16 @@
 
     <script>
         const params = new URLSearchParams(window.location.search);
-        const url    = params.get('url');
-        const name   = params.get('name');
-        const icon   = params.get('icon');
+        const url = params.get('url');
+        const name = params.get('name');
+        const icon = params.get('icon');
 
-        const spinner    = document.getElementById('spinner');
+        const spinner = document.getElementById('spinner');
         const installBtn = document.getElementById('installBtn');
         const statusText = document.getElementById('statusText');
-        const errorBox   = document.getElementById('errorBox');
-        const iconArea   = document.getElementById('iconArea');
-        const title      = document.getElementById('title');
+        const errorBox = document.getElementById('errorBox');
+        const iconArea = document.getElementById('iconArea');
+        const title = document.getElementById('title');
         const appNameLabel = document.getElementById('appNameLabel');
 
         // Set app icon
@@ -167,7 +233,6 @@
             img.alt = name || 'App';
             img.className = 'app-icon';
             img.onerror = () => {
-                // Fallback to emoji logo if image fails to load
                 iconArea.innerHTML = '<div class="default-logo">📲</div>';
             };
             iconArea.appendChild(img);
@@ -200,4 +265,5 @@
         }
     </script>
 </body>
+
 </html>
